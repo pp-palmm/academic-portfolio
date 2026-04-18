@@ -4,8 +4,8 @@
   "description": "Remotion animations for portfolio research section",
   "scripts": {
     "start": "remotion studio",
-    "render:pipeline": "remotion render Pipeline --output ../public/videos/pipeline.mp4 --codec h264",
-    "render:research": "remotion render ResearchFlow --output ../public/videos/research-flow.mp4 --codec h264",
+    "render:pipeline": "remotion render src/Root.tsx Pipeline --output ../public/videos/pipeline.mp4 --codec h264",
+    "render:research": "remotion render src/Root.tsx ResearchFlow --output ../public/videos/research-flow.mp4 --codec h264",
     "render:all": "npm run render:pipeline && npm run render:research"
   },
   "dependencies": {

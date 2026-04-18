@@ -1,9 +1,9 @@
 import React from "react";
-import { Composition } from "remotion";
+import { Composition, registerRoot } from "remotion";
 import { Pipeline } from "./Pipeline";
 import { ResearchFlow, RESEARCH_FLOW_DURATION } from "./ResearchFlow";
 
-export const RemotionRoot: React.FC = () => {
+const RemotionRoot: React.FC = () => {
   return (
     <>
       {/*
@@ -39,3 +39,5 @@ export const RemotionRoot: React.FC = () => {
     </>
   );
 };
+
+registerRoot(RemotionRoot);
