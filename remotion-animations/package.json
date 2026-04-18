@@ -1,0 +1,25 @@
+{
+  "name": "palm-portfolio-animations",
+  "version": "1.0.0",
+  "description": "Remotion animations for portfolio research section",
+  "scripts": {
+    "start": "remotion studio",
+    "render:pipeline": "remotion render Pipeline --output ../public/videos/pipeline.mp4 --codec h264",
+    "render:research": "remotion render ResearchFlow --output ../public/videos/research-flow.mp4 --codec h264",
+    "render:all": "npm run render:pipeline && npm run render:research"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.288",
+    "@remotion/google-fonts": "4.0.288",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "remotion": "4.0.288"
+  },
+  "devDependencies": {
+    "@types/react": "18.3.21",
+    "typescript": "5.8.3"
+  },
+  "remotion": {
+    "entryPoint": "src/Root.tsx"
+  }
+}
