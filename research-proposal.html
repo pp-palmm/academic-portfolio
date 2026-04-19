@@ -75,7 +75,7 @@
       }
       .nav-links {
         display: flex;
-        gap: 28px;
+        gap: 14px;
         list-style: none;
       }
       .nav-links a {
@@ -371,15 +371,11 @@
         <ul class="nav-links" id="navLinks">
           <li><a href="index.html#about">About</a></li>
           <li><a href="index.html#research">Research</a></li>
-          <li>
-            <a href="research-proposal.html" class="nav-active"
-              >Research Proposal</a
-            >
-          </li>
           <li><a href="index.html#publications">Publications</a></li>
           <li><a href="index.html#experience">Experience</a></li>
-          <li><a href="cv.html">CV</a></li>
           <li><a href="index.html#writing">Writing / Blog</a></li>
+          <li><a href="research-proposal.html" class="nav-cta nav-active">Research Proposal</a></li>
+          <li><a href="cv.html" class="nav-cta">Cover Letter &amp; CV</a></li>
           <li><a href="index.html#contact" class="nav-cta">Get in Touch</a></li>
         </ul>
         <div class="hamburger" id="hamburger" onclick="toggleMenu()">
@@ -391,7 +387,7 @@
     <!-- ARTICLE -->
     <div class="article-wrap">
       <p class="article-label">Research Proposal · Master's Application</p>
-      <h1 class="article-title">Introduction and Research Proposal</h1>
+      <h1 class="article-title">Research Proposal</h1>
       <div class="article-meta">
         <span>✍️ Phuriphan Prathipasen</span>
         <span>📅 April 2026</span>
@@ -409,124 +405,10 @@
       <hr class="article-divider" />
 
       <div class="article-body">
+
         <!-- ─── SECTION 1 ─────────────────────── -->
-        <span class="section-num">Section 1</span>
-        <h2>Introduction</h2>
-
-        <p>
-          My name is Phuriphan Prathipasen. I hold a
-          <strong
-            >Bachelor of Engineering in Computer Engineering with a
-            specialization in Artificial Intelligence from Sirindhorn
-            International Institute of Technology (SIIT), Thammasat University,
-            Thailand</strong
-          >, and I currently work as a Data and AI Transformation Consultant,
-          serving as the <strong>lead of the data and AI strategy team</strong>.
-          During my undergraduate studies, I had the opportunity to participate
-          in the Young Science and Engineering Researchers Program (YSEP) at
-          <strong>Tokyo Institute of Technology</strong>, where I conducted NLP
-          research under <strong>Tokunaga Laboratory</strong>, supervised by
-          <a
-            href="https://www.irfi.titech.ac.jp/wrhi-archive/en/people/tokunaga-takenobu/index.html"
-            target="_blank"
-            class="doc-ref"
-            >Professor Tokunaga Takenobu</a
-          >. My research there focused on the
-          <strong
-            >semantics alignment of idea units using large language
-            models</strong
-          >, investigating how effectively LLMs can align idea units between
-          source texts and student summaries as part of a summarization task. I
-          have also contributed to 2 journal articles and 3 international
-          conference publications in natural language processing, machine
-          learning, and deep learning, both as a research assistant at my
-          university and as an intern at Thailand's National Electronics and
-          Computer Technology Center (NECTEC). One of my NLP journal
-          publications focused on
-          <strong>music processing for composer classification</strong>, where
-          we represented musical pieces using SentencePiece and Word2vec to
-          classify composers, achieving a high F1-score of 1.00 on classical
-          music data, under the supervision of
-          <a
-            href="https://www.virach.com/about-me"
-            target="_blank"
-            class="doc-ref"
-            >Professor Virach Sornlertlamvanich</a
-          >
-          and
-          <a
-            href="https://www.siit.tu.ac.th/page_bx.php?cid=106&cno=74&show="
-            target="_blank"
-            class="doc-ref"
-            >Dr. Somrudee Deepaisarn</a
-          >.
-        </p>
-
-        <p>
-          Alongside my academic work, I
-          <a
-            href="https://youtu.be/TOe_o67O4zY?si=XEzG96f0vrENKTFv"
-            target="_blank"
-            class="doc-ref"
-            >co-founded a music streaming startup</a
-          >
-          during university that helped users relax and stay productive through
-          a customizable listening environment. The platform grew to over 5,000
-          users and
-          <strong
-            >won awards and top rankings across more than 11 startup
-            competitions</strong
-          >, such as AWS Entrepreneurship Program, Startup Thailand League 2021
-          and 2022, and TED Fellow Youth Startup Fund 2021, where we placed as
-          winners or top-ranked finalists in each.
-        </p>
-
-        <p>
-          Since graduating, I have accumulated over
-          <strong>2.5 years of professional experience</strong> across two
-          companies as a Data and AI Transformation Consultant, working at the
-          intersection of deep technical implementation and strategic advisory.
-          In this role, I have
-          <strong
-            >led data and AI strategy transformation by developing and
-            implementing data and AI strategy frameworks</strong
-          >, generating actionable use cases, and building data and AI roadmaps
-          that guide organisations through their transformation journey. I have
-          also led client meetings to assess business challenges and
-          opportunities, facilitated ideation workshops, designed solution
-          architectures, crafted technical proposals, and managed
-          cross-functional teams across data science, data engineering, and
-          product development. On the technical side, I have
-          <strong
-            >written data pipelines, implemented data visualizations, and built
-            LLM applications</strong
-          >, giving me firsthand experience of the exact systems my research
-          aims to improve. Working directly with C-level executives and seeing
-          products through from concept to delivery has given me a clear and
-          grounded view of where AI systems succeed and where they break down in
-          practice, which is what ultimately drives my research motivation.
-        </p>
-
-        <p>
-          Having built my foundation across both academic research and industry
-          practice, I have come to deeply understand the gap between what AI
-          systems can do in theory and what they reliably deliver in practice. I
-          have seen firsthand how LLM-based systems that work well in controlled
-          settings often break down in real production environments. This
-          observation is what drives my motivation to pursue research that is
-          not just academically meaningful but also directly applicable to the
-          real-world challenges that businesses and users face today.
-        </p>
-
-        <hr class="article-divider" />
-
-        <!-- ─── SECTION 2 ─────────────────────── -->
-        <span class="section-num">Section 2</span>
-        <h2>Research Proposal</h2>
-
-        <!-- 2.1 -->
         <h3>
-          2.1 Problem Statement and Motivation — The Hidden Cost of Model
+          1. Problem Statement and Motivation — The Hidden Cost of Model
           Selection
         </h3>
 
@@ -576,8 +458,8 @@
           multi-agent AI systems of the future.
         </p>
 
-        <!-- 2.2 -->
-        <h3>2.2 Related Work — Three Stages of the LLM Pipeline</h3>
+        <!-- 2 -->
+        <h3>2. Related Work — Three Stages of the LLM Pipeline</h3>
 
         <p>
           The LLM pipeline can be broadly divided into three sequential stages:
@@ -610,7 +492,7 @@
           fill.
         </p>
 
-        <h4>2.2.1 Academic Research</h4>
+        <h4>2.1 Academic Research</h4>
 
         <p><strong>Post-generation: factuality and evaluation</strong></p>
 
@@ -700,7 +582,7 @@
           query-level indicator for automated model selection.
         </p>
 
-        <h4>2.2.2 Industry Approaches</h4>
+        <h4>2.2 Industry Approaches</h4>
 
         <p><strong>Adaptive thinking within a single model</strong></p>
 
@@ -730,7 +612,7 @@
           introduces at the generation level.
         </p>
 
-        <h4>2.2.3 Summary and Findings</h4>
+        <h4>2.3 Summary and Findings</h4>
 
         <p>
           Taken together, both bodies of work share the same core observation:
@@ -754,8 +636,8 @@
           >
         </div>
 
-        <!-- 2.3 -->
-        <h3>2.3 Proposed Research Plan — Toward Bias-Aware Model Selection</h3>
+        <!-- 3 -->
+        <h3>3. Proposed Research Plan — Toward Bias-Aware Model Selection</h3>
 
         <p>
           My research addresses the question of
@@ -826,8 +708,8 @@
           practical, deployable framework for adaptive model routing.
         </p>
 
-        <!-- 2.4 -->
-        <h3>2.4 Expected Contributions and Benefits</h3>
+        <!-- 4 -->
+        <h3>4. Expected Contributions and Benefits</h3>
 
         <p>
           This research is expected to yield contributions at both the
