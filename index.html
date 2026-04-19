@@ -183,7 +183,9 @@
         padding: 12px 24px;
         border-radius: 100px;
         text-decoration: none;
-        transition: background 0.2s, transform 0.15s;
+        transition:
+          background 0.2s,
+          transform 0.15s;
       }
       .btn-primary:hover {
         background: var(--accent-blue-hover);
@@ -199,7 +201,9 @@
         padding: 12px 24px;
         border-radius: 100px;
         text-decoration: none;
-        transition: background 0.2s, transform 0.15s;
+        transition:
+          background 0.2s,
+          transform 0.15s;
       }
       .btn-secondary:hover {
         background: #e5e5ea;
@@ -353,25 +357,48 @@
         color: var(--near-black);
         margin-bottom: 3px;
       }
-      .pb-active .pb-step-title { color: #fff; }
+      .pb-active .pb-step-title {
+        color: #fff;
+      }
       .pb-step-sub {
         font-size: 11px;
         color: var(--muted);
       }
-      .pb-active .pb-step-sub { color: rgba(255,255,255,0.5); }
+      .pb-active .pb-step-sub {
+        color: rgba(255, 255, 255, 0.5);
+      }
 
       /* Stage flow — 3 cards */
+      .stage-flow-wrapper {
+        border: 1.5px solid var(--near-black);
+        border-radius: 24px;
+        padding: 20px;
+        margin-bottom: 28px;
+        position: relative;
+      }
+      .stage-flow-label {
+        position: absolute;
+        top: -11px;
+        left: 22px;
+        background: var(--near-black);
+        color: #fff;
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        padding: 3px 12px;
+        border-radius: 100px;
+      }
       .stage-flow {
         display: flex;
         align-items: stretch;
         gap: 0;
-        margin-bottom: 28px;
       }
       .stage-card {
         flex: 1;
         background: var(--bg);
-        border-radius: 20px;
-        padding: 30px 26px;
+        border-radius: 14px;
+        padding: 26px 22px;
       }
       .stage-connector {
         display: flex;
@@ -416,11 +443,30 @@
         color: var(--mid);
         line-height: 1.7;
       }
+      .stage-section {
+        margin-top: 14px;
+        padding-top: 14px;
+        border-top: 1px solid var(--light-border);
+      }
+      .stage-section-label {
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 6px;
+      }
+      .stage-section-body {
+        font-size: 13px;
+        color: var(--mid);
+        line-height: 1.7;
+      }
 
       /* Routing visualization — flex row, no grid issues */
       .routing-vis {
         display: flex;
         align-items: center;
+        justify-content: center;
         gap: 10px;
         background: var(--bg);
         border-radius: 20px;
@@ -447,12 +493,16 @@
         color: var(--near-black);
         margin-bottom: 3px;
       }
-      .rv-node-dark .rv-node-title { color: #fff; }
+      .rv-node-dark .rv-node-title {
+        color: #fff;
+      }
       .rv-node-sub {
         font-size: 11px;
         color: var(--muted);
       }
-      .rv-node-dark .rv-node-sub { color: rgba(255,255,255,0.5); }
+      .rv-node-dark .rv-node-sub {
+        color: rgba(255, 255, 255, 0.5);
+      }
       .rv-arrow {
         font-size: 16px;
         color: var(--muted);
@@ -470,11 +520,11 @@
         white-space: nowrap;
       }
       .rv-model-reasoning {
-        background: rgba(0,113,227,0.07);
-        border: 1px solid rgba(0,113,227,0.2);
+        background: rgba(0, 113, 227, 0.07);
+        border: 1px solid rgba(0, 113, 227, 0.2);
       }
       .rv-model-direct {
-        background: rgba(110,110,115,0.07);
+        background: rgba(110, 110, 115, 0.07);
         border: 1px solid var(--light-border);
       }
       .rv-model-name {
@@ -483,7 +533,9 @@
         color: var(--near-black);
         margin-bottom: 2px;
       }
-      .rv-model-reasoning .rv-model-name { color: var(--accent-blue); }
+      .rv-model-reasoning .rv-model-name {
+        color: var(--accent-blue);
+      }
       .rv-model-desc {
         font-size: 11px;
         color: var(--muted);
@@ -869,7 +921,7 @@
           padding: 20px 24px 28px;
           gap: 18px;
           border-bottom: 1px solid var(--light-border);
-          box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
         }
         .nav-links.open a {
           font-size: 16px;
@@ -982,8 +1034,10 @@
         <ul class="nav-links" id="navLinks">
           <li><a href="#about">About</a></li>
           <li><a href="#research">Research</a></li>
+          <li><a href="research-proposal.html">Research Proposal</a></li>
           <li><a href="#publications">Publications</a></li>
           <li><a href="#experience">Experience</a></li>
+          <li><a href="cv.html">CV</a></li>
           <li><a href="#writing">Writing / Blog</a></li>
           <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
         </ul>
@@ -1000,8 +1054,12 @@
       </p>
       <h1 class="hero-name">Phuriphan<br />Prathipasen</h1>
       <p class="hero-tagline">
-        <strong>Data &amp; AI Strategy Lead · NLP and AI Research · Startup Builder</strong><br />
-        Bridging the gap between AI research and real-world impact — from lab experiments to enterprise transformation.
+        <strong
+          >Data &amp; AI Strategy Lead · NLP and AI Research · Startup
+          Builder</strong
+        ><br />
+        Bridging the gap between AI research and real-world impact — from lab
+        experiments to enterprise transformation.
       </p>
       <div class="hero-pills">
         <span class="pill">Natural Language Processing</span>
@@ -1012,8 +1070,10 @@
         <span class="pill">Data-Driven Transformation</span>
       </div>
       <div class="hero-actions">
-        <a href="https://drive.google.com/file/d/1RjgVfDhtM4ORSrPSoit0iUnpnMxsmgXR/view?usp=drive_link" target="_blank" class="btn-primary">View My Research Plan ↗</a>
-        <a href="https://drive.google.com/file/d/1NvSmlHm03Bvqo7DWovVYbzEae70u_LTc/view?usp=drive_link" target="_blank" class="btn-primary">View My CV ↗</a>
+        <a href="research-proposal.html" class="btn-primary"
+          >View My Research Plan</a
+        >
+        <a href="cv.html" class="btn-primary">View My CV</a>
       </div>
     </section>
 
@@ -1022,17 +1082,51 @@
     <!-- ABOUT -->
     <section class="section" id="about">
       <p class="section-label">About Me</p>
-      <h2 class="section-title">Research meets<br /><em>real-world practice</em></h2>
+      <h2 class="section-title">
+        Research meets<br /><em>real-world practice</em>
+      </h2>
       <div class="about-grid">
         <div class="about-text">
           <p>
-            I hold a <strong>Bachelor of Engineering in Computer Engineering with a specialization in Artificial Intelligence from Sirindhorn International Institute of Technology (SIIT), Thammasat University, Thailand</strong>. During my studies, I spent five months at <strong>Tokyo Institute of Technology, Japan</strong> under Professor Tokunaga Takenobu's NLP Lab, investigating the capabilities of large language models in semantic alignment of idea units as part of a summarization evaluation task. One of my research projects at SIIT involved music processing, representing musical pieces using SentencePiece and Word2Vec to classify composers and achieving an F1-score of 1.00 on classical music data, published in <em>Scientific Reports</em>, alongside contributions to IEEE conference papers spanning machine learning and deep learning.
+            I hold a
+            <strong
+              >Bachelor of Engineering in Computer Engineering with a
+              specialization in Artificial Intelligence from Sirindhorn
+              International Institute of Technology (SIIT), Thammasat
+              University, Thailand</strong
+            >. During my studies, I spent five months at
+            <strong>Tokyo Institute of Technology, Japan</strong> under
+            Professor Tokunaga Takenobu's NLP Lab, investigating the
+            capabilities of large language models in semantic alignment of idea
+            units as part of a summarization evaluation task. One of my research
+            projects at SIIT involved music processing, representing musical
+            pieces using SentencePiece and Word2Vec to classify composers and
+            achieving an F1-score of 1.00 on classical music data, published in
+            <em>Scientific Reports</em>, alongside contributions to IEEE
+            conference papers spanning machine learning and deep learning.
           </p>
           <p>
-            Since graduating, I have spent over 2.5 years in <strong>Data and AI Consulting</strong>, where I currently <strong>lead the Data Strategy Team</strong>. My work spans data and AI solution architecture design, data and AI strategy framework development, leading client meetings, data and AI roadmap development, building data pipelines and LLM applications, and working directly with C-level executives on data transformation and product development. Along the way, I've seen firsthand where LLM systems shine in prototypes and exactly where they fall apart in production.
+            Since graduating, I have spent over 2.5 years in
+            <strong>Data and AI Consulting</strong>, where I currently
+            <strong>lead the Data Strategy Team</strong>. My work spans data and
+            AI solution architecture design, data and AI strategy framework
+            development, leading client meetings, data and AI roadmap
+            development, building data pipelines and LLM applications, and
+            working directly with C-level executives on data transformation and
+            product development. Along the way, I've seen firsthand where LLM
+            systems shine in prototypes and exactly where they fall apart in
+            production.
           </p>
           <p>
-            That gap between lab performance and real-world deployment is what draws me back to research. I plan to pursue a Master's degree focused on a specific upstream problem: <strong>automated, bias-aware model selection for LLMs</strong>. I want to understand how reasoning and non-reasoning model configurations differ in systematic ways, and build a mechanism that routes each query to the right model automatically — so that production AI systems are as reliable and principled as the research behind them.
+            That gap between lab performance and real-world deployment is what
+            draws me back to research. I plan to pursue a Master's degree
+            focused on a specific upstream problem:
+            <strong>automated, bias-aware model selection for LLMs</strong>. I
+            want to understand how reasoning and non-reasoning model
+            configurations differ in systematic ways, and build a mechanism that
+            routes each query to the right model automatically — so that
+            production AI systems are as reliable and principled as the research
+            behind them.
           </p>
         </div>
         <div class="about-stats">
@@ -1049,22 +1143,32 @@
           <div class="stat-card">
             <div class="stat-icon">🏆</div>
             <div class="stat-number">11+</div>
-            <div class="stat-label">Startup competition wins &amp; rankings</div>
+            <div class="stat-label">
+              Startup competition wins &amp; rankings
+            </div>
           </div>
           <div class="stat-card">
             <div class="stat-icon">🚀</div>
             <div class="stat-number">5K+</div>
-            <div class="stat-label">Users on startup platform built from scratch</div>
+            <div class="stat-label">
+              Users on startup platform built from scratch
+            </div>
           </div>
           <div class="stat-card">
             <div class="stat-icon">🔬</div>
             <div class="stat-number">3 yrs</div>
-            <div class="stat-label">Total research experience in NLP, ML &amp; deep learning</div>
+            <div class="stat-label">
+              Total research experience in NLP, ML &amp; deep learning
+            </div>
           </div>
           <div class="stat-card">
             <div class="stat-icon">🇯🇵</div>
-            <div class="stat-number" style="font-size: 20px; line-height: 1.25">Tokyo Tech</div>
-            <div class="stat-label">Exchange Student, Tokunaga Lab · 5 months</div>
+            <div class="stat-number" style="font-size: 20px; line-height: 1.25">
+              Tokyo Tech
+            </div>
+            <div class="stat-label">
+              Exchange Student, Tokunaga Lab · 5 months
+            </div>
           </div>
         </div>
       </div>
@@ -1075,9 +1179,22 @@
     <!-- RESEARCH -->
     <section class="section" id="research">
       <p class="section-label">Research Plan</p>
-      <h2 class="section-title">The right model,<br /><em>for the right query</em></h2>
+      <h2 class="section-title">
+        The right model,<br /><em>for the right query</em>
+      </h2>
       <p class="research-intro">
-        Large Language Models now come in two configurations: <strong>reasoning models</strong> that apply extended chain-of-thought before responding, and <strong>non-reasoning models</strong> that answer directly. The relationship between model capability and output quality is not straightforward — on simple tasks, non-reasoning models often produce more accurate and concise answers with fewer hallucinations, while reasoning models can over-complicate responses when the task does not require deep inference. Yet no widely accepted framework exists for automatically determining which model type is most appropriate for a given query — a gap that becomes increasingly consequential as LLMs grow into multi-agent architectures where model selection is a structural requirement rather than a matter of user preference.
+        Large Language Models now come in two configurations:
+        <strong>reasoning models</strong> that apply extended chain-of-thought
+        before responding, and <strong>non-reasoning models</strong> that answer
+        directly. The relationship between model capability and output quality
+        is not straightforward — on simple tasks, non-reasoning models often
+        produce more accurate and concise answers with fewer hallucinations,
+        while reasoning models can over-complicate responses when the task does
+        not require deep inference. Yet no widely accepted framework exists for
+        automatically determining which model type is most appropriate for a
+        given query — a gap that becomes increasingly consequential as LLMs grow
+        into multi-agent architectures where model selection is a structural
+        requirement rather than a matter of user preference.
       </p>
 
       <!-- Where this research sits in the LLM pipeline -->
@@ -1100,34 +1217,93 @@
       </div>
 
       <!-- Three research stages -->
-      <div class="stage-flow">
-        <div class="stage-card">
-          <div class="stage-num">Stage 1</div>
-          <div class="stage-icon">🔬</div>
-          <div class="stage-title">Behavioral &amp; Bias Analysis</div>
-          <div class="stage-body">Systematically compare the output behaviour of reasoning and non-reasoning models across a structured range of tasks — varying semantic complexity, prompt length, task structure, and domain — to identify which configuration is better suited to which type of request. The stage also characterizes generation-level biases: over-elaboration bias in reasoning models, where extended chain-of-thought produces unnecessary complexity on simple tasks, and positional bias and self-reinforcement bias arising from how each model type processes its own prior context.</div>
-        </div>
-        <div class="stage-connector">
-          <div class="sc-line"></div>
-          <div class="sc-arrow">▶</div>
-          <div class="sc-line"></div>
-        </div>
-        <div class="stage-card">
-          <div class="stage-num">Stage 2</div>
-          <div class="stage-icon">📐</div>
-          <div class="stage-title">Query Complexity Estimation</div>
-          <div class="stage-body">Rather than selecting a model based on user preference or task label, this stage investigates whether reasoning complexity can be estimated from the query's own properties — its semantic complexity, syntactic structure, domain specificity, and the sub-questions it naturally decomposes into. The result is a query-level complexity signal that distinguishes requests benefiting from extended reasoning from those better served by direct, non-reasoning generation.</div>
-        </div>
-        <div class="stage-connector">
-          <div class="sc-line"></div>
-          <div class="sc-arrow">▶</div>
-          <div class="sc-line"></div>
-        </div>
-        <div class="stage-card">
-          <div class="stage-num">Stage 3</div>
-          <div class="stage-icon">🔀</div>
-          <div class="stage-title">Agentic Model Routing</div>
-          <div class="stage-body">Building on the behavioural profiles from Stage 1 and the complexity estimation framework from Stage 2, this stage explores the design of an LLM-based routing agent that automatically analyses a given query and directs it to the most appropriate model configuration. The routing agent integrates the findings of the preceding stages into a practical decision mechanism, reducing bias and improving output quality without requiring manual model selection from the user.</div>
+      <div class="stage-flow-wrapper">
+        <div class="stage-flow-label">Pre-Generation</div>
+        <div class="stage-flow">
+          <div class="stage-card">
+            <div class="stage-num">Stage 1</div>
+            <div class="stage-icon">🔬</div>
+            <div class="stage-title">Behavioral &amp; Bias Analysis</div>
+            <div class="stage-section">
+              <div class="stage-section-label">What</div>
+              <div class="stage-section-body">
+                This stage systematically compares how reasoning and
+                non-reasoning models behave across a range of tasks varying in
+                complexity, structure, and domain. It also examines the biases
+                each configuration tends to introduce — such as reasoning models
+                over-complicating responses on simple tasks, or both model types
+                exhibiting positional and self-reinforcement biases based on how
+                they process context.
+              </div>
+            </div>
+            <div class="stage-section">
+              <div class="stage-section-label">Objective</div>
+              <div class="stage-section-body">
+                To identify which model type is better suited for which kind of
+                request, and to build a structured understanding of the biases
+                each configuration carries as a foundation for a reliable model
+                selection mechanism.
+              </div>
+            </div>
+          </div>
+          <div class="stage-connector">
+            <div class="sc-line"></div>
+            <div class="sc-arrow">▶</div>
+            <div class="sc-line"></div>
+          </div>
+          <div class="stage-card">
+            <div class="stage-num">Stage 2</div>
+            <div class="stage-icon">📐</div>
+            <div class="stage-title">Query Complexity Estimation</div>
+            <div class="stage-section">
+              <div class="stage-section-label">What</div>
+              <div class="stage-section-body">
+                This stage examines the incoming query itself, investigating
+                whether the reasoning complexity of a query can be estimated
+                from its own properties — such as its semantic depth, syntactic
+                structure, domain specificity, and how many sub-questions it
+                naturally breaks down into.
+              </div>
+            </div>
+            <div class="stage-section">
+              <div class="stage-section-label">Objective</div>
+              <div class="stage-section-body">
+                To develop a query-level complexity signal that can reliably
+                distinguish between requests that benefit from extended
+                reasoning and those that are better served by a direct,
+                non-reasoning response, without relying on user preference or
+                manual task labelling.
+              </div>
+            </div>
+          </div>
+          <div class="stage-connector">
+            <div class="sc-line"></div>
+            <div class="sc-arrow">▶</div>
+            <div class="sc-line"></div>
+          </div>
+          <div class="stage-card">
+            <div class="stage-num">Stage 3</div>
+            <div class="stage-icon">🔀</div>
+            <div class="stage-title">Agentic Model Routing</div>
+            <div class="stage-section">
+              <div class="stage-section-label">What</div>
+              <div class="stage-section-body">
+                This stage builds on the findings from Stage 1 and Stage 2 to
+                design an LLM-based routing agent that automatically analyses an
+                incoming query and directs it to the most appropriate model —
+                whether reasoning or non-reasoning — based on the complexity
+                signal and bias profiles established in the earlier stages.
+              </div>
+            </div>
+            <div class="stage-section">
+              <div class="stage-section-label">Objective</div>
+              <div class="stage-section-body">
+                To develop a practical, automated routing mechanism that reduces
+                bias and improves output quality without requiring any manual
+                model selection from the user.
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -1161,9 +1337,22 @@
       </div>
 
       <div class="research-impact">
-        <strong>Why this matters:</strong> Academic research confirms that model configurations produce systematically different outputs depending on task complexity, but stops short of providing a way to make that choice before generation begins. Industry practice has moved in this direction — but without a formal measure of query complexity, no cross-model scope, and no account of the biases each configuration introduces. This research fills that gap by combining a structured bias analysis, a query-level complexity measure, and an agentic routing mechanism — reducing unnecessary reasoning overhead on simple tasks, preventing underperformance on complex ones, and making model configuration decisions principled rather than based on user intuition.
+        <strong>Why this matters:</strong> As AI systems grow more capable, the
+        future of production deployment is moving toward Agentic AI, where
+        multiple specialized models collaborate to complete complex tasks. In
+        such systems, selecting the wrong model for a given query does not only
+        affect a single response. It can introduce bias that propagates through
+        the entire pipeline, compounding across models and corrupting downstream
+        outputs. This research investigates the behavioral differences between
+        reasoning and non-reasoning models, the biases each configuration
+        carries, and whether query complexity can be measured reliably enough to
+        automate the selection decision. The goal is a transparent, bias-aware
+        framework that matches each query to the right model before generation
+        begins.
       </div>
-      <a href="https://drive.google.com/file/d/1RjgVfDhtM4ORSrPSoit0iUnpnMxsmgXR/view?usp=drive_link" target="_blank" class="btn-secondary">Read Full Research Proposal ↗</a>
+      <a href="research-proposal.html" class="btn-secondary"
+        >Read Full Research Proposal ↗</a
+      >
     </section>
 
     <hr class="section-divider" />
@@ -1177,50 +1366,104 @@
           <div class="pub-year">2024</div>
           <div class="pub-info">
             <div class="pub-venue-badge">IEEE Access · Journal</div>
-            <div class="pub-title">Denoising Raman Spectra Using Autoencoder for Improved Analysis of Contamination in HDD</div>
-            <div class="pub-authors">Gulyanon S., Deepaisarn S., Chokphantavee S., <strong>Prathipasen P.</strong>, et al.</div>
+            <div class="pub-title">
+              Denoising Raman Spectra Using Autoencoder for Improved Analysis of
+              Contamination in HDD
+            </div>
+            <div class="pub-authors">
+              Gulyanon S., Deepaisarn S., Chokphantavee S.,
+              <strong>Prathipasen P.</strong>, et al.
+            </div>
           </div>
-          <a href="https://doi.org/10.1109/ACCESS.2024.3441824" target="_blank" class="pub-link">DOI ↗</a>
+          <a
+            href="https://doi.org/10.1109/ACCESS.2024.3441824"
+            target="_blank"
+            class="pub-link"
+            >DOI ↗</a
+          >
         </div>
 
         <div class="pub-item">
           <div class="pub-year">2023</div>
           <div class="pub-info">
             <div class="pub-venue-badge">Scientific Reports · Journal</div>
-            <div class="pub-title">NLP-based Music Processing for Composer Classification</div>
-            <div class="pub-authors">Deepaisarn S., Chokphantavee S., <strong>Prathipasen P.</strong>, Buaruk S., Sornlertlamvanich V.</div>
+            <div class="pub-title">
+              NLP-based Music Processing for Composer Classification
+            </div>
+            <div class="pub-authors">
+              Deepaisarn S., Chokphantavee S., <strong>Prathipasen P.</strong>,
+              Buaruk S., Sornlertlamvanich V.
+            </div>
           </div>
-          <a href="https://doi.org/10.1038/s41598-023-40332-0" target="_blank" class="pub-link">DOI ↗</a>
+          <a
+            href="https://doi.org/10.1038/s41598-023-40332-0"
+            target="_blank"
+            class="pub-link"
+            >DOI ↗</a
+          >
         </div>
 
         <div class="pub-item">
           <div class="pub-year">2022</div>
           <div class="pub-info">
             <div class="pub-venue-badge">iSAI-NLP · Conference</div>
-            <div class="pub-title">Visual-based Musical Data Representation for Composer Classification</div>
-            <div class="pub-authors">Deepaisarn S., Buaruk S., Chokphantavee S., <strong>Prathipasen P.</strong>, Sornlertlamvanich V.</div>
+            <div class="pub-title">
+              Visual-based Musical Data Representation for Composer
+              Classification
+            </div>
+            <div class="pub-authors">
+              Deepaisarn S., Buaruk S., Chokphantavee S.,
+              <strong>Prathipasen P.</strong>, Sornlertlamvanich V.
+            </div>
           </div>
-          <a href="https://doi.org/10.1109/iSAI-NLP56921.2022.9960254" target="_blank" class="pub-link">DOI ↗</a>
+          <a
+            href="https://doi.org/10.1109/iSAI-NLP56921.2022.9960254"
+            target="_blank"
+            class="pub-link"
+            >DOI ↗</a
+          >
         </div>
 
         <div class="pub-item">
           <div class="pub-year">2022</div>
           <div class="pub-info">
             <div class="pub-venue-badge">SICE · Conference</div>
-            <div class="pub-title">Forecasting Water Stress in Durian Trees Using an ARIMA Model with Temperature Differential and VPD</div>
-            <div class="pub-authors">Songsriboonsit N., Tantawanich P., <strong>Prathipasen P.</strong>, Kongprawechnon W., et al.</div>
+            <div class="pub-title">
+              Forecasting Water Stress in Durian Trees Using an ARIMA Model with
+              Temperature Differential and VPD
+            </div>
+            <div class="pub-authors">
+              Songsriboonsit N., Tantawanich P.,
+              <strong>Prathipasen P.</strong>, Kongprawechnon W., et al.
+            </div>
           </div>
-          <a href="https://doi.org/10.23919/SICE56594.2022.9905764" target="_blank" class="pub-link">DOI ↗</a>
+          <a
+            href="https://doi.org/10.23919/SICE56594.2022.9905764"
+            target="_blank"
+            class="pub-link"
+            >DOI ↗</a
+          >
         </div>
 
         <div class="pub-item">
           <div class="pub-year">2021</div>
           <div class="pub-info">
             <div class="pub-venue-badge">iSAI-NLP · Conference</div>
-            <div class="pub-title">Clutter Removal Algorithm Based on Grid Density for Rockfall Detection in 3D Point Clouds from Terrestrial LiDAR</div>
-            <div class="pub-authors"><strong>Prathipasen P.</strong>, Dillon P., Aimmanee P., Teerarungsigul S., et al.</div>
+            <div class="pub-title">
+              Clutter Removal Algorithm Based on Grid Density for Rockfall
+              Detection in 3D Point Clouds from Terrestrial LiDAR
+            </div>
+            <div class="pub-authors">
+              <strong>Prathipasen P.</strong>, Dillon P., Aimmanee P.,
+              Teerarungsigul S., et al.
+            </div>
           </div>
-          <a href="https://doi.org/10.1109/iSAI-NLP54397.2021.9678185" target="_blank" class="pub-link">DOI ↗</a>
+          <a
+            href="https://doi.org/10.1109/iSAI-NLP54397.2021.9678185"
+            target="_blank"
+            class="pub-link"
+            >DOI ↗</a
+          >
         </div>
       </div>
     </section>
@@ -1235,9 +1478,19 @@
         <div class="timeline-item">
           <div class="timeline-dot active"></div>
           <div class="timeline-period">Oct 2024 – Present</div>
-          <div class="timeline-role">Data and AI Transformation Consultant (Data and AI Strategy Lead)</div>
-          <div class="timeline-org">Athentic Consulting Co., Ltd. · Bangkok, Thailand</div>
-          <div class="timeline-body">Lead the Data Strategy Team across full project lifecycles — from stakeholder interviews and business contextualization to use case ideation, prioritization, and implementation planning. Drive data and AI transformation for enterprise clients by developing strategy frameworks, governance standards, and AI roadmaps.</div>
+          <div class="timeline-role">
+            Data and AI Transformation Consultant (Data and AI Strategy Lead)
+          </div>
+          <div class="timeline-org">
+            Athentic Consulting Co., Ltd. · Bangkok, Thailand
+          </div>
+          <div class="timeline-body">
+            Lead the Data Strategy Team across full project lifecycles — from
+            stakeholder interviews and business contextualization to use case
+            ideation, prioritization, and implementation planning. Drive data
+            and AI transformation for enterprise clients by developing strategy
+            frameworks, governance standards, and AI roadmaps.
+          </div>
         </div>
 
         <div class="timeline-item">
@@ -1245,47 +1498,90 @@
           <div class="timeline-period">Sep 2023 – Sep 2024 · 1 Year</div>
           <div class="timeline-role">Data Consultant</div>
           <div class="timeline-org">Data Wow Co., Ltd. · Bangkok, Thailand</div>
-          <div class="timeline-body">Led client engagements for data science and AI challenges, formulated solution architectures, crafted technical proposals, and managed custom AI development projects end-to-end with C-level executives using Lean Startup methodology.</div>
+          <div class="timeline-body">
+            Led client engagements for data science and AI challenges,
+            formulated solution architectures, crafted technical proposals, and
+            managed custom AI development projects end-to-end with C-level
+            executives using Lean Startup methodology.
+          </div>
         </div>
 
         <div class="timeline-item">
           <div class="timeline-dot"></div>
           <div class="timeline-period">Apr – Aug 2023 · 5 Months</div>
           <div class="timeline-role">Research Exchange Student</div>
-          <div class="timeline-org">Tokyo Institute of Technology · Tokunaga Laboratory, Japan</div>
-          <div class="timeline-body">Conducted research on semantics alignment of idea units using large language models as part of a summarization evaluation task, under Professor Tokunaga Takenobu. Served as Committee Member of the Thai Students' Association at Tokyo Tech.</div>
+          <div class="timeline-org">
+            Tokyo Institute of Technology · Tokunaga Laboratory, Japan
+          </div>
+          <div class="timeline-body">
+            Conducted research on semantics alignment of idea units using large
+            language models as part of a summarization evaluation task, under
+            Professor Tokunaga Takenobu. Served as Committee Member of the Thai
+            Students' Association at Tokyo Tech.
+          </div>
         </div>
 
         <div class="timeline-item">
           <div class="timeline-dot"></div>
-          <div class="timeline-period">Aug 2021 – Sep 2023 · 2 Years 2 Months</div>
+          <div class="timeline-period">
+            Aug 2021 – Sep 2023 · 2 Years 2 Months
+          </div>
           <div class="timeline-role">Research Assistant (Part-Time)</div>
-          <div class="timeline-org">Sirindhorn International Institute of Technology (SIIT), Thammasat University · Bangkok, Thailand</div>
-          <div class="timeline-body">Contributed to research in ML, NLP, and deep learning under the Musical AI and Smart Campus Creation project, resulting in one IEEE conference paper and one Scientific Reports journal article on NLP-based music processing for composer classification.</div>
+          <div class="timeline-org">
+            Sirindhorn International Institute of Technology (SIIT), Thammasat
+            University · Bangkok, Thailand
+          </div>
+          <div class="timeline-body">
+            Contributed to research in ML, NLP, and deep learning under the
+            Musical AI and Smart Campus Creation project, resulting in one IEEE
+            conference paper and one Scientific Reports journal article on
+            NLP-based music processing for composer classification.
+          </div>
         </div>
 
         <div class="timeline-item">
           <div class="timeline-dot"></div>
-          <div class="timeline-period">Jan 2021 – Mar 2023 · 1 Year 8 Months</div>
+          <div class="timeline-period">
+            Jan 2021 – Mar 2023 · 1 Year 8 Months
+          </div>
           <div class="timeline-role">Co-Founder, CEO &amp; CTO</div>
-          <div class="timeline-org">Checkpoint (Startup) · Bangkok, Thailand</div>
-          <div class="timeline-body">Built and launched an ambient music platform for productivity and relaxation, growing to 5,000+ users in 6 months. Won or placed in 11+ startup competitions across Thailand, securing USD 10,000 in funding and 14+ strategic partnerships.</div>
+          <div class="timeline-org">
+            Checkpoint (Startup) · Bangkok, Thailand
+          </div>
+          <div class="timeline-body">
+            Built and launched an ambient music platform for productivity and
+            relaxation, growing to 5,000+ users in 6 months. Won or placed in
+            11+ startup competitions across Thailand, securing USD 10,000 in
+            funding and 14+ strategic partnerships.
+          </div>
         </div>
 
         <div class="timeline-item">
           <div class="timeline-dot"></div>
           <div class="timeline-period">Jun – Aug 2022 · 2 Months</div>
           <div class="timeline-role">Machine Learning Engineer (Intern)</div>
-          <div class="timeline-org">AI and Robotics Ventures (ARV) · Bangkok, Thailand</div>
-          <div class="timeline-body">Developed and deployed data and ML pipelines on Google Cloud Platform using Cloud Storage, Cloud Functions, Cloud Run, BigQuery, and Looker Studio under the Varuna ML team with Agile framework.</div>
+          <div class="timeline-org">
+            AI and Robotics Ventures (ARV) · Bangkok, Thailand
+          </div>
+          <div class="timeline-body">
+            Developed and deployed data and ML pipelines on Google Cloud
+            Platform using Cloud Storage, Cloud Functions, Cloud Run, BigQuery,
+            and Looker Studio under the Varuna ML team with Agile framework.
+          </div>
         </div>
 
         <div class="timeline-item">
           <div class="timeline-dot"></div>
-          <div class="timeline-period">Apr 2021 – Aug 2022 · 1 Year 6 Months</div>
+          <div class="timeline-period">
+            Apr 2021 – Aug 2022 · 1 Year 6 Months
+          </div>
           <div class="timeline-role">Research Assistant (Intern)</div>
           <div class="timeline-org">NECTEC (NSTDA) · Thailand</div>
-          <div class="timeline-body">Conducted data science research in machine learning and data analysis under the digital agriculture technology team, resulting in 2 international IEEE conference publications.</div>
+          <div class="timeline-body">
+            Conducted data science research in machine learning and data
+            analysis under the digital agriculture technology team, resulting in
+            2 international IEEE conference publications.
+          </div>
         </div>
       </div>
     </section>
@@ -1302,7 +1598,9 @@
           <div class="edu-period">April 2023 – August 2023</div>
           <div class="edu-school">Tokyo Institute of Technology</div>
           <div class="edu-degree">
-            Exchange Student · Department of Computer Science<br />Young Science and Engineering Researchers Program (YSEP)<br />Tokunaga Laboratory — NLP &amp; AI Research
+            Exchange Student · Department of Computer Science<br />Young Science
+            and Engineering Researchers Program (YSEP)<br />Tokunaga Laboratory
+            — NLP &amp; AI Research
           </div>
           <div class="edu-tags">
             <span class="edu-tag">NLP</span>
@@ -1314,9 +1612,13 @@
         <div class="edu-card">
           <div class="edu-flag">🇹🇭</div>
           <div class="edu-period">August 2019 – August 2023</div>
-          <div class="edu-school">Sirindhorn International Institute of Technology (SIIT), Thammasat University</div>
+          <div class="edu-school">
+            Sirindhorn International Institute of Technology (SIIT), Thammasat
+            University
+          </div>
           <div class="edu-degree">
-            Bachelor of Engineering (International Program)<br />Computer Engineering · Artificial Intelligence Program<br />GPA: 3.32 / 4.00
+            Bachelor of Engineering (International Program)<br />Computer
+            Engineering · Artificial Intelligence Program<br />GPA: 3.32 / 4.00
           </div>
           <div class="edu-tags">
             <span class="edu-tag">AI Specialization</span>
@@ -1337,56 +1639,74 @@
         <div class="award-item">
           <div class="award-icon">🎓</div>
           <div class="award-text">
-            <div class="award-title">SIIT Reputation Award — Outstanding Performance</div>
+            <div class="award-title">
+              SIIT Reputation Award — Outstanding Performance
+            </div>
             <div class="award-org">Thammasat University · 2021</div>
           </div>
         </div>
         <div class="award-item">
           <div class="award-icon">🎓</div>
           <div class="award-text">
-            <div class="award-title">Good Academic Performance &amp; Conduct Scholarship</div>
+            <div class="award-title">
+              Good Academic Performance &amp; Conduct Scholarship
+            </div>
             <div class="award-org">SIIT, Thammasat University · 2021</div>
           </div>
         </div>
         <div class="award-item">
           <div class="award-icon">🥇</div>
           <div class="award-text">
-            <div class="award-title">1st Place, AWS Entrepreneurship Program</div>
+            <div class="award-title">
+              1st Place, AWS Entrepreneurship Program
+            </div>
             <div class="award-org">Amazon Web Services · 2021</div>
           </div>
         </div>
         <div class="award-item">
           <div class="award-icon">🥇</div>
           <div class="award-text">
-            <div class="award-title">1st Place, CU Startup Thailand League 2022</div>
+            <div class="award-title">
+              1st Place, CU Startup Thailand League 2022
+            </div>
             <div class="award-org">Chulalongkorn University · 2022</div>
           </div>
         </div>
         <div class="award-item">
           <div class="award-icon">🥇</div>
           <div class="award-text">
-            <div class="award-title">1st Place, CU Startup Thailand League 2021</div>
+            <div class="award-title">
+              1st Place, CU Startup Thailand League 2021
+            </div>
             <div class="award-org">Chulalongkorn University · 2021</div>
           </div>
         </div>
         <div class="award-item">
           <div class="award-icon">💰</div>
           <div class="award-text">
-            <div class="award-title">100,000 THB Grant, TED Fellow Youth Startup Fund</div>
+            <div class="award-title">
+              100,000 THB Grant, TED Fellow Youth Startup Fund
+            </div>
             <div class="award-org">Thammasat University · 2021</div>
           </div>
         </div>
         <div class="award-item">
           <div class="award-icon">🏆</div>
           <div class="award-text">
-            <div class="award-title">Top 8 of 270 Teams, 88 Sandbox Program</div>
-            <div class="award-org">Smart People, Smart Society · Thailand 2022</div>
+            <div class="award-title">
+              Top 8 of 270 Teams, 88 Sandbox Program
+            </div>
+            <div class="award-org">
+              Smart People, Smart Society · Thailand 2022
+            </div>
           </div>
         </div>
         <div class="award-item">
           <div class="award-icon">🌍</div>
           <div class="award-text">
-            <div class="award-title">Top 12 of 300 Teams Worldwide, SCB 10X Metathon</div>
+            <div class="award-title">
+              Top 12 of 300 Teams Worldwide, SCB 10X Metathon
+            </div>
             <div class="award-org">Metaverse Infrastructure Track · 2022</div>
           </div>
         </div>
@@ -1400,21 +1720,27 @@
         <div class="award-item">
           <div class="award-icon">🏅</div>
           <div class="award-text">
-            <div class="award-title">3rd Runner-Up, Thailand HR Tech Startup Pitch</div>
+            <div class="award-title">
+              3rd Runner-Up, Thailand HR Tech Startup Pitch
+            </div>
             <div class="award-org">Thailand HR Tech · 2022</div>
           </div>
         </div>
         <div class="award-item">
           <div class="award-icon">🌱</div>
           <div class="award-text">
-            <div class="award-title">Regional Finalist &amp; Prototype Grant, NIA Startup League</div>
+            <div class="award-title">
+              Regional Finalist &amp; Prototype Grant, NIA Startup League
+            </div>
             <div class="award-org">National Innovation Agency · 2021</div>
           </div>
         </div>
         <div class="award-item">
           <div class="award-icon">🤝</div>
           <div class="award-text">
-            <div class="award-title">Selected, KATALYST / KBANK &amp; Stanford Entrepreneurship</div>
+            <div class="award-title">
+              Selected, KATALYST / KBANK &amp; Stanford Entrepreneurship
+            </div>
             <div class="award-org">KBANK × Stanford · 2021</div>
           </div>
         </div>
@@ -1426,25 +1752,49 @@
     <!-- WRITING / BLOG -->
     <section class="section" id="writing">
       <p class="section-label">Writing / Blog</p>
-      <h2 class="section-title">Thoughts on<br /><em>Data and AI Industries</em></h2>
+      <h2 class="section-title">
+        Thoughts on<br /><em>Data and AI Industries</em>
+      </h2>
       <div class="blog-grid">
-        <a href="https://www.athenticconsulting.co.th/en/article/42" target="_blank" class="blog-card">
+        <a
+          href="https://www.athenticconsulting.co.th/en/article/42"
+          target="_blank"
+          class="blog-card"
+        >
           <div class="blog-date">14 May 2025 · Athentic Consulting</div>
           <div class="blog-topic">Data Strategy</div>
-          <div class="blog-title">What is Data Strategy and How to Build One?</div>
-          <div class="blog-excerpt">A deep dive into the three-phase framework for data strategy — Contextualization, Ideation, and Prescription — with practical implementation insights from working with Thai enterprises.</div>
+          <div class="blog-title">
+            What is Data Strategy and How to Build One?
+          </div>
+          <div class="blog-excerpt">
+            A deep dive into the three-phase framework for data strategy —
+            Contextualization, Ideation, and Prescription — with practical
+            implementation insights from working with Thai enterprises.
+          </div>
           <div class="blog-cta">Read article ↗</div>
         </a>
 
-        <a href="https://www.athenticconsulting.co.th/en/article/43" target="_blank" class="blog-card">
+        <a
+          href="https://www.athenticconsulting.co.th/en/article/43"
+          target="_blank"
+          class="blog-card"
+        >
           <div class="blog-date">15 May 2025 · Athentic Consulting</div>
           <div class="blog-topic">Agentic AI</div>
-          <div class="blog-title">What is Agentic AI, MCP, and A2A — with Practical Examples</div>
-          <div class="blog-excerpt">A plain-language explanation of how multi-agent AI systems work — from MCP's universal connector to A2A's agent-to-agent communication — and what this means for the future of AI in everyday life.</div>
+          <div class="blog-title">
+            What is Agentic AI, MCP, and A2A — with Practical Examples
+          </div>
+          <div class="blog-excerpt">
+            A plain-language explanation of how multi-agent AI systems work —
+            from MCP's universal connector to A2A's agent-to-agent communication
+            — and what this means for the future of AI in everyday life.
+          </div>
           <div class="blog-cta">Read article ↗</div>
         </a>
       </div>
-      <p class="blog-more-note">More articles on NLP, LLMs, and AI research coming soon.</p>
+      <p class="blog-more-note">
+        More articles on NLP, LLMs, and AI research coming soon.
+      </p>
     </section>
 
     <hr class="section-divider" />
@@ -1454,10 +1804,21 @@
       <div class="contact-inner">
         <div>
           <h2 class="contact-headline">Let's talk about research.</h2>
-          <p class="contact-sub">I'm actively exploring Master's opportunities in NLP — particularly in Japan. If you'd like to discuss research directions, collaboration, or my application, I'd love to connect.</p>
+          <p class="contact-sub">
+            I'm actively exploring Master's opportunities in NLP — particularly
+            in Japan. If you'd like to discuss research directions,
+            collaboration, or my application, I'd love to connect.
+          </p>
           <div class="hero-actions" style="justify-content: flex-start">
-            <a href="mailto:pp.phuriphan@gmail.com" class="btn-primary">Send an Email</a>
-            <a href="https://www.linkedin.com/in/phuriphan-prathipasen/" target="_blank" class="btn-primary">LinkedIn</a>
+            <a href="mailto:pp.phuriphan@gmail.com" class="btn-primary"
+              >Send an Email</a
+            >
+            <a
+              href="https://www.linkedin.com/in/phuriphan-prathipasen/"
+              target="_blank"
+              class="btn-primary"
+              >LinkedIn</a
+            >
           </div>
         </div>
         <div class="contact-links">
@@ -1468,7 +1829,11 @@
               <div class="contact-link-value">pp.phuriphan@gmail.com</div>
             </div>
           </a>
-          <a href="https://www.linkedin.com/in/phuriphan-prathipasen/" target="_blank" class="contact-link">
+          <a
+            href="https://www.linkedin.com/in/phuriphan-prathipasen/"
+            target="_blank"
+            class="contact-link"
+          >
             <div class="contact-link-icon">💼</div>
             <div>
               <div class="contact-link-label">LinkedIn</div>
@@ -1482,11 +1847,16 @@
               <div class="contact-link-value">+66 98-774-7756</div>
             </div>
           </a>
-          <div class="contact-link" style="cursor: default; pointer-events: none">
+          <div
+            class="contact-link"
+            style="cursor: default; pointer-events: none"
+          >
             <div class="contact-link-icon">📍</div>
             <div>
               <div class="contact-link-label">Location</div>
-              <div class="contact-link-value">Bangkok, Thailand · Open to Japan</div>
+              <div class="contact-link-value">
+                Bangkok, Thailand · Open to Japan
+              </div>
             </div>
           </div>
         </div>
@@ -1496,7 +1866,9 @@
     <!-- FOOTER -->
     <footer>
       <div class="footer-inner">
-        <p class="footer-copy">© 2026 Phuriphan Prathipasen. All rights reserved.</p>
+        <p class="footer-copy">
+          © 2026 Phuriphan Prathipasen. All rights reserved.
+        </p>
         <div class="footer-links">
           <a href="#about">About</a>
           <a href="#research">Research</a>
@@ -1508,28 +1880,28 @@
     </footer>
 
     <script>
-      var navLinks = document.getElementById('navLinks');
-      var hamburger = document.getElementById('hamburger');
+      var navLinks = document.getElementById("navLinks");
+      var hamburger = document.getElementById("hamburger");
 
       function toggleMenu() {
-        navLinks.classList.toggle('open');
+        navLinks.classList.toggle("open");
       }
 
-      document.addEventListener('click', function(e) {
+      document.addEventListener("click", function (e) {
         if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
-          navLinks.classList.remove('open');
+          navLinks.classList.remove("open");
         }
       });
 
-      document.querySelectorAll('a[href^="#"]').forEach(function(link) {
-        link.addEventListener('click', function(e) {
-          var href = this.getAttribute('href');
+      document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+        link.addEventListener("click", function (e) {
+          var href = this.getAttribute("href");
           var target = document.querySelector(href);
           if (!target) return;
           e.preventDefault();
-          navLinks.classList.remove('open');
+          navLinks.classList.remove("open");
           var top = target.getBoundingClientRect().top + window.scrollY - 68;
-          window.scrollTo({ top: top, behavior: 'smooth' });
+          window.scrollTo({ top: top, behavior: "smooth" });
         });
       });
     </script>
