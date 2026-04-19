@@ -374,7 +374,11 @@
           <li><a href="index.html#publications">Publications</a></li>
           <li><a href="index.html#experience">Experience</a></li>
           <li><a href="index.html#writing">Writing / Blog</a></li>
-          <li><a href="research-proposal.html" class="nav-cta nav-active">Research Proposal</a></li>
+          <li>
+            <a href="research-proposal.html" class="nav-cta nav-active"
+              >Research Proposal</a
+            >
+          </li>
           <li><a href="cv.html" class="nav-cta">Cover Letter &amp; CV</a></li>
           <li><a href="index.html#contact" class="nav-cta">Get in Touch</a></li>
         </ul>
@@ -405,7 +409,6 @@
       <hr class="article-divider" />
 
       <div class="article-body">
-
         <!-- ─── SECTION 1 ─────────────────────── -->
         <h3>
           1. Problem Statement and Motivation — The Hidden Cost of Model
@@ -712,52 +715,21 @@
         <h3>4. Expected Contributions and Benefits</h3>
 
         <p>
-          This research is expected to yield contributions at both the
-          scientific and practical levels.
+          As AI systems grow more capable, the future of production deployment
+          is moving toward Agentic AI, where multiple specialized models
+          collaborate to complete complex tasks. In such systems, selecting the
+          wrong model for a given query does not only affect a single response.
+          It can introduce bias that propagates through the entire pipeline,
+          compounding across models and corrupting downstream outputs.
         </p>
 
         <p>
-          Scientifically, the behavioral and bias analysis in Stage 1 will
-          produce the first systematic characterization of generation-level
-          biases specific to the reasoning and non-reasoning models across a
-          structured range of task types. This fills a documented gap in the
-          literature, as prior work has addressed output evaluation and
-          factuality verification but has not characterised how model
-          configuration itself introduces systematic bias prior to generation.
-        </p>
-
-        <p>
-          The query complexity estimation framework developed in Stage 2
-          provides a clear, measurable way to determine how much reasoning a
-          given query requires. Unlike existing approaches, where the model
-          judges its own complexity in a way that cannot be easily inspected or
-          verified, this framework estimates complexity from the query itself,
-          making the process transparent, consistent, and applicable across
-          different models and systems.
-        </p>
-
-        <p>
-          At the practical level, the agentic routing mechanism developed in
-          Stage 3 offers a deployable solution for reducing unnecessary
-          reasoning overhead on simple tasks and preventing reasoning-mode
-          underperformance on tasks that genuinely require inference.
-        </p>
-
-        <p>
-          This has direct implications for inference cost efficiency, as routing
-          queries away from reasoning models when they are not needed reduces
-          the token expenditure associated with extended chain-of-thought
-          generation. It also improves output quality by reducing the
-          hallucination and over-elaboration risks that arise when reasoning
-          models are applied to tasks outside their optimal operating range.
-        </p>
-
-        <p>
-          Finally, by making the selection decision transparent and bias-aware,
-          the framework supports a more principled approach to LLM deployment in
-          both research and production settings, where model configuration
-          choices are currently made largely on the basis of user intuition or
-          task label rather than systematic analysis.
+          This research investigates the behavioral differences between
+          reasoning and non-reasoning models, the biases each configuration
+          carries, and whether query complexity can be measured reliably enough
+          to automate the selection decision. The goal is a transparent,
+          bias-aware framework that matches each query to the right model before
+          generation begins.
         </p>
       </div>
       <!-- /article-body -->
