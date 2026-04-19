@@ -1,0 +1,910 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Research Proposal — Phuriphan Prathipasen</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      :root {
+        --near-black: #111111;
+        --mid: #3a3a3c;
+        --muted: #6e6e73;
+        --light-border: #d2d2d7;
+        --bg: #f5f5f7;
+        --white: #ffffff;
+        --accent-blue: #0071e3;
+        --accent-blue-hover: #0077ed;
+        --tag-bg: #f0f0f5;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Outfit", sans-serif;
+        background: var(--white);
+        color: var(--near-black);
+        font-size: 17px;
+        line-height: 1.65;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      /* ─── NAV ─────────────────────────────────── */
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        background: rgba(255, 255, 255, 0.82);
+        backdrop-filter: saturate(180%) blur(20px);
+        -webkit-backdrop-filter: saturate(180%) blur(20px);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        overflow: visible;
+      }
+      .nav-inner {
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 0 24px;
+        height: 52px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .nav-logo {
+        font-family: "Instrument Serif", serif;
+        font-size: 18px;
+        color: var(--near-black);
+        text-decoration: none;
+        letter-spacing: -0.01em;
+      }
+      .nav-links {
+        display: flex;
+        gap: 28px;
+        list-style: none;
+      }
+      .nav-links a {
+        font-size: 13px;
+        font-weight: 400;
+        color: var(--mid);
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+      .nav-links a:hover {
+        color: var(--near-black);
+      }
+      .nav-active {
+        color: var(--near-black) !important;
+        font-weight: 500 !important;
+      }
+      .nav-cta {
+        font-size: 13px;
+        font-weight: 500;
+        color: var(--accent-blue) !important;
+      }
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        padding: 4px;
+      }
+      .hamburger span {
+        display: block;
+        width: 22px;
+        height: 1.5px;
+        background: var(--near-black);
+      }
+
+      /* ─── ARTICLE LAYOUT ─────────────────────── */
+      .article-wrap {
+        max-width: 700px;
+        margin: 0 auto;
+        padding: 120px 24px 100px;
+      }
+
+      /* Header */
+      .article-label {
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 16px;
+      }
+      .article-title {
+        font-family: "Instrument Serif", serif;
+        font-size: clamp(32px, 6vw, 52px);
+        font-weight: 400;
+        line-height: 1.12;
+        letter-spacing: -0.025em;
+        color: var(--near-black);
+        margin-bottom: 20px;
+      }
+      .article-meta {
+        font-size: 14px;
+        color: var(--muted);
+        margin-bottom: 32px;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+      .article-meta span {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      /* PDF button */
+      .btn-pdf {
+        display: inline-block;
+        background: var(--tag-bg);
+        color: var(--near-black);
+        font-family: "Outfit", sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        padding: 10px 20px;
+        border-radius: 100px;
+        text-decoration: none;
+        border: 1px solid var(--light-border);
+        transition:
+          background 0.2s,
+          transform 0.15s;
+        margin-bottom: 48px;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .btn-pdf:hover {
+        background: #e5e5ea;
+        transform: translateY(-1px);
+      }
+
+      .article-divider {
+        border: none;
+        border-top: 1px solid var(--light-border);
+        margin: 48px 0;
+      }
+
+      /* Body typography */
+      .article-body p {
+        font-size: 17px;
+        color: var(--mid);
+        line-height: 1.8;
+        margin-bottom: 20px;
+      }
+      .article-body p:last-child {
+        margin-bottom: 0;
+      }
+      .doc-ref {
+        color: #4a86e8;
+      }
+
+      .article-body h2 {
+        font-family: "Instrument Serif", serif;
+        font-size: clamp(24px, 4vw, 32px);
+        font-weight: 400;
+        color: var(--near-black);
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+        margin-top: 56px;
+        margin-bottom: 16px;
+      }
+      .article-body h3 {
+        font-family: "Outfit", sans-serif;
+        font-size: 17px;
+        font-weight: 600;
+        color: var(--near-black);
+        margin-top: 36px;
+        margin-bottom: 12px;
+      }
+      .article-body h4 {
+        font-family: "Outfit", sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        color: var(--muted);
+        text-transform: uppercase;
+        margin-top: 28px;
+        margin-bottom: 10px;
+      }
+
+      .article-body ul,
+      .article-body ol {
+        padding-left: 24px;
+        margin-bottom: 20px;
+      }
+      .article-body li {
+        font-size: 17px;
+        color: var(--mid);
+        line-height: 1.8;
+        margin-bottom: 6px;
+      }
+
+      /* Callout box for stage descriptions */
+      .stage-block {
+        background: var(--bg);
+        border-radius: 16px;
+        padding: 28px 32px;
+        margin: 24px 0;
+      }
+      .stage-block-label {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--accent-blue);
+        margin-bottom: 8px;
+      }
+      .stage-block-title {
+        font-family: "Instrument Serif", serif;
+        font-size: 22px;
+        color: var(--near-black);
+        margin-bottom: 12px;
+        line-height: 1.3;
+      }
+      .stage-block p {
+        font-size: 15px !important;
+        color: var(--mid);
+        line-height: 1.75;
+        margin-bottom: 0 !important;
+      }
+
+      /* Highlight box */
+      .highlight-box {
+        background: var(--near-black);
+        color: rgba(255, 255, 255, 0.8);
+        border-radius: 16px;
+        padding: 32px 36px;
+        margin: 32px 0;
+        font-size: 16px;
+        line-height: 1.75;
+      }
+      .highlight-box strong {
+        color: #fff;
+      }
+
+      /* Section number badge */
+      .section-num {
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 4px;
+        display: block;
+      }
+
+      /* ─── FOOTER ─────────────────────────────── */
+      .article-footer {
+        border-top: 1px solid var(--light-border);
+        padding: 28px 24px;
+        margin-top: 80px;
+      }
+      .article-footer-inner {
+        max-width: 700px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+      .footer-copy {
+        font-size: 12px;
+        color: var(--muted);
+      }
+      .footer-back {
+        font-size: 13px;
+        font-weight: 500;
+        color: var(--accent-blue);
+        text-decoration: none;
+      }
+      .footer-back:hover {
+        opacity: 0.7;
+      }
+
+      /* ─── RESPONSIVE ─────────────────────────── */
+      @media (max-width: 768px) {
+        .nav-links {
+          display: none;
+        }
+        .hamburger {
+          display: flex;
+        }
+        .nav-links.open {
+          display: flex;
+          flex-direction: column;
+          position: fixed;
+          top: 52px;
+          left: 0;
+          right: 0;
+          z-index: 99;
+          background: rgba(255, 255, 255, 0.98);
+          backdrop-filter: blur(20px);
+          -webkit-backdrop-filter: blur(20px);
+          padding: 20px 24px 28px;
+          gap: 18px;
+          border-bottom: 1px solid var(--light-border);
+          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+        }
+        .nav-links.open a {
+          font-size: 16px;
+        }
+        .article-wrap {
+          padding: 100px 20px 72px;
+        }
+        .stage-block {
+          padding: 22px 24px;
+        }
+        .highlight-box {
+          padding: 24px 24px;
+        }
+        .article-footer-inner {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- NAV -->
+    <nav>
+      <div class="nav-inner">
+        <a href="index.html" class="nav-logo">You can call me "Palm" 🌴</a>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#research">Research</a></li>
+          <li>
+            <a href="research-proposal.html" class="nav-active"
+              >Research Proposal</a
+            >
+          </li>
+          <li><a href="index.html#publications">Publications</a></li>
+          <li><a href="index.html#experience">Experience</a></li>
+          <li><a href="cv.html">CV</a></li>
+          <li><a href="index.html#writing">Writing / Blog</a></li>
+          <li><a href="index.html#contact" class="nav-cta">Get in Touch</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ARTICLE -->
+    <div class="article-wrap">
+      <p class="article-label">Research Proposal · Master's Application</p>
+      <h1 class="article-title">Introduction and Research Proposal</h1>
+      <div class="article-meta">
+        <span>✍️ Phuriphan Prathipasen</span>
+        <span>📅 April 2026</span>
+        <span>🎓 Master's Applicant 2027</span>
+      </div>
+
+      <a
+        href="https://drive.google.com/file/d/1RjgVfDhtM4ORSrPSoit0iUnpnMxsmgXR/view?usp=drive_link"
+        target="_blank"
+        class="btn-pdf"
+      >
+        📄 View PDF Version ↗
+      </a>
+
+      <hr class="article-divider" />
+
+      <div class="article-body">
+        <!-- ─── SECTION 1 ─────────────────────── -->
+        <span class="section-num">Section 1</span>
+        <h2>Introduction</h2>
+
+        <p>
+          My name is Phuriphan Prathipasen. I hold a
+          <strong
+            >Bachelor of Engineering in Computer Engineering with a
+            specialization in Artificial Intelligence from Sirindhorn
+            International Institute of Technology (SIIT), Thammasat University,
+            Thailand</strong
+          >, and I currently work as a Data and AI Transformation Consultant,
+          serving as the <strong>lead of the data and AI strategy team</strong>.
+          During my undergraduate studies, I had the opportunity to participate
+          in the Young Science and Engineering Researchers Program (YSEP) at
+          <strong>Tokyo Institute of Technology</strong>, where I conducted NLP
+          research under <strong>Tokunaga Laboratory</strong>, supervised by
+          <a
+            href="https://www.irfi.titech.ac.jp/wrhi-archive/en/people/tokunaga-takenobu/index.html"
+            target="_blank"
+            class="doc-ref"
+            >Professor Tokunaga Takenobu</a
+          >. My research there focused on the
+          <strong
+            >semantics alignment of idea units using large language
+            models</strong
+          >, investigating how effectively LLMs can align idea units between
+          source texts and student summaries as part of a summarization task. I
+          have also contributed to 2 journal articles and 3 international
+          conference publications in natural language processing, machine
+          learning, and deep learning, both as a research assistant at my
+          university and as an intern at Thailand's National Electronics and
+          Computer Technology Center (NECTEC). One of my NLP journal
+          publications focused on
+          <strong>music processing for composer classification</strong>, where
+          we represented musical pieces using SentencePiece and Word2vec to
+          classify composers, achieving a high F1-score of 1.00 on classical
+          music data, under the supervision of
+          <a
+            href="https://www.virach.com/about-me"
+            target="_blank"
+            class="doc-ref"
+            >Professor Virach Sornlertlamvanich</a
+          >
+          and
+          <a
+            href="https://www.siit.tu.ac.th/page_bx.php?cid=106&cno=74&show="
+            target="_blank"
+            class="doc-ref"
+            >Dr. Somrudee Deepaisarn</a
+          >.
+        </p>
+
+        <p>
+          Alongside my academic work, I
+          <a
+            href="https://youtu.be/TOe_o67O4zY?si=XEzG96f0vrENKTFv"
+            target="_blank"
+            class="doc-ref"
+            >co-founded a music streaming startup</a
+          >
+          during university that helped users relax and stay productive through
+          a customizable listening environment. The platform grew to over 5,000
+          users and
+          <strong
+            >won awards and top rankings across more than 11 startup
+            competitions</strong
+          >, such as AWS Entrepreneurship Program, Startup Thailand League 2021
+          and 2022, and TED Fellow Youth Startup Fund 2021, where we placed as
+          winners or top-ranked finalists in each.
+        </p>
+
+        <p>
+          Since graduating, I have accumulated over
+          <strong>2.5 years of professional experience</strong> across two
+          companies as a Data and AI Transformation Consultant, working at the
+          intersection of deep technical implementation and strategic advisory.
+          In this role, I have
+          <strong
+            >led data and AI strategy transformation by developing and
+            implementing data and AI strategy frameworks</strong
+          >, generating actionable use cases, and building data and AI roadmaps
+          that guide organisations through their transformation journey. I have
+          also led client meetings to assess business challenges and
+          opportunities, facilitated ideation workshops, designed solution
+          architectures, crafted technical proposals, and managed
+          cross-functional teams across data science, data engineering, and
+          product development. On the technical side, I have
+          <strong
+            >written data pipelines, implemented data visualizations, and built
+            LLM applications</strong
+          >, giving me firsthand experience of the exact systems my research
+          aims to improve. Working directly with C-level executives and seeing
+          products through from concept to delivery has given me a clear and
+          grounded view of where AI systems succeed and where they break down in
+          practice, which is what ultimately drives my research motivation.
+        </p>
+
+        <p>
+          Having built my foundation across both academic research and industry
+          practice, I have come to deeply understand the gap between what AI
+          systems can do in theory and what they reliably deliver in practice. I
+          have seen firsthand how LLM-based systems that work well in controlled
+          settings often break down in real production environments. This
+          observation is what drives my motivation to pursue research that is
+          not just academically meaningful but also directly applicable to the
+          real-world challenges that businesses and users face today.
+        </p>
+
+        <hr class="article-divider" />
+
+        <!-- ─── SECTION 2 ─────────────────────── -->
+        <span class="section-num">Section 2</span>
+        <h2>Research Proposal</h2>
+
+        <!-- 2.1 -->
+        <h3>
+          2.1 Problem Statement and Motivation — The Hidden Cost of Model
+          Selection
+        </h3>
+
+        <p>
+          Large Language Models (LLMs) have become one of the most widely
+          adopted technologies in both research and industry in recent years. A
+          notable feature of many modern LLMs is the availability of multiple
+          model configurations, particularly the distinction between reasoning
+          and non-reasoning models. While this flexibility is useful, it
+          introduces a practical and underexplored problem: the same query can
+          produce noticeably different outputs depending on which model is used,
+          yet no clear guidance exists for determining which model is the right
+          choice.
+        </p>
+
+        <p>
+          The relationship between model capability and output quality is not
+          straightforward. On simple tasks, non-reasoning models often produce
+          more accurate and concise answers with fewer hallucinations, while
+          reasoning models can over-complicate responses when the task does not
+          require deep inference. This suggests that selecting a more powerful
+          model does not necessarily yield better results, and that the
+          appropriateness of a model configuration depends on the nature of the
+          query rather than the capability of the model alone.
+        </p>
+
+        <p>
+          This mismatch between model selection and task demands will become
+          increasingly consequential as LLMs grow in complexity. The emerging
+          paradigm for production LLMs is not a single model handling all tasks,
+          but multi-agent architectures (Agentic AI) in which multiple models
+          collaborate, each responsible for the subtask it is best suited to
+          handle. In such systems, model selection becomes a structural
+          requirement rather than a matter of user preference, as assigning a
+          query to the wrong model can introduce errors and inefficiencies that
+          propagate throughout the entire pipeline. Furthermore, each model
+          configuration carries its own systematic biases, meaning that an
+          incorrect routing decision introduces avoidable bias into the output
+          before generation even begins.
+        </p>
+
+        <p>
+          Despite this, no widely accepted framework currently exists for
+          automatically determining which model type is most appropriate for a
+          given query. Addressing this gap is both a practical necessity for
+          current deployments and a foundational requirement for the reliable
+          multi-agent AI systems of the future.
+        </p>
+
+        <!-- 2.2 -->
+        <h3>2.2 Related Work — Three Stages of the LLM Pipeline</h3>
+
+        <p>
+          The LLM pipeline can be broadly divided into three sequential stages:
+          pre-generation, in which a query is received, and a model
+          configuration is selected; generation, in which the selected model
+          produces a response; and post-generation, in which the output is
+          verified or evaluated. Prior work has addressed the latter two stages
+          extensively, but the first — model selection before generation begins
+          — remains largely unaddressed. My research positions itself at that
+          upstream gap. Related work on this pipeline can be understood through
+          two lenses:
+        </p>
+
+        <ul>
+          <li>
+            Academic research, which has produced a body of findings on model
+            behavior, output quality, and reasoning characteristics that this
+            research draws upon to understand the problem space.
+          </li>
+          <li>
+            Industry practice, which reflects how the question of reasoning
+            allocation is being addressed in real-world deployments today.
+          </li>
+        </ul>
+
+        <p>
+          Together, these two bodies of work establish both what is known about
+          how models behave and what has already been attempted in practice,
+          collectively revealing the gap that this research is positioned to
+          fill.
+        </p>
+
+        <h4>2.2.1 Academic Research</h4>
+
+        <p><strong>Post-generation: factuality and evaluation</strong></p>
+
+        <p>
+          On the factuality verification side,
+          <strong
+            >DiVA: Fine-grained Factuality Verification with
+            Agentic-Discriminative Verifier</strong
+          >
+          (<span class="doc-ref">Huang et al., 2026a</span>) addresses the
+          question of <em>"Is the output factually correct?"</em> by proposing
+          an agentic framework that systematically verifies LLM-generated
+          content after generation. DiVA demonstrates that agent-driven
+          verification is an effective strategy for detecting factual errors
+          that surface in LLM outputs. On the model evaluation side,
+          <strong
+            >Reasoning Model Is Superior LLM-Judge, Yet Suffers from
+            Biases</strong
+          >
+          (<span class="doc-ref">Huang et al., 2026b</span>) addresses the
+          question of <em>Is a reasoning model a good evaluator?</em> by
+          examining the capabilities and limitations of reasoning models when
+          used as judges.
+        </p>
+
+        <p>
+          While the study confirms the superiority of reasoning models in
+          evaluation tasks, it also reveals that they carry systematic biases
+          that affect judgment quality. Collectively, these studies map out two
+          essential dimensions of output quality: factual correctness and
+          evaluator reliability.
+        </p>
+
+        <p><strong>Generation stage: complexity and model behavior</strong></p>
+
+        <p>
+          A third relevant line of work examines what happens during generation
+          itself.
+          <strong
+            >The Illusion of Thinking: Understanding the Strengths and
+            Limitations of Reasoning Models via the Lens of Problem
+            Complexity</strong
+          >
+          (<span class="doc-ref">Shojaee et al., 2025</span>) uses controllable
+          puzzle environments to compare reasoning and non-reasoning models
+          across varying difficulty levels. Their studies confirm that
+          <em>a more capable model is not always the better choice</em>: at low
+          complexity, standard models match or outperform reasoning models while
+          using fewer tokens; at medium complexity, reasoning models gain an
+          advantage; and at high complexity, both collapse.
+        </p>
+
+        <p>
+          The study also identifies two generation-level failure modes —
+          overthinking on simple tasks and fixation on incorrect solutions at
+          high complexity — that are systematic and not correctable by
+          post-generation verification alone. However, the study is limited to
+          sequential planning puzzles and stops short of any practical
+          prescription. It does not cover factual or open-ended settings, and it
+          does not propose a mechanism for acting on its findings.
+        </p>
+
+        <p><strong>Pre-generation stage: the selection decision</strong></p>
+
+        <p>
+          This research adds a third dimension to that landscape: the selection
+          decision that precedes generation itself. A methodological bridge
+          toward answering this question comes from
+          <strong
+            >Enhancing large language models: alleviating knowledge deficiency
+            with external knowledge and semantically aware reasoning
+            (SAR)</strong
+          >
+          (<span class="doc-ref">Sornlertlamvanich, 2025</span>), which proposes
+          a dual-process architecture inspired by human cognitive theory, in
+          which System 1 is augmented with structured external knowledge akin to
+          System 2 reasoning. A central mechanism in this architecture is
+          LLM-generated question expansion.
+        </p>
+
+        <p>
+          The study demonstrates that the number and quality of generated
+          questions required to adequately represent a piece of content
+          correlate with that content's semantic richness and inferential depth.
+          This suggests a measurable relationship between question generation
+          behaviour and reasoning demand, one that may serve as a lightweight,
+          query-level indicator for automated model selection.
+        </p>
+
+        <h4>2.2.2 Industry Approaches</h4>
+
+        <p><strong>Adaptive thinking within a single model</strong></p>
+
+        <p>
+          A related but architecturally distinct approach has emerged at the
+          industry level. Anthropic's adaptive thinking, introduced in the
+          Claude 4.6 model family, allows a single model to dynamically
+          determine whether and how much extended reasoning to apply to each
+          request, rather than relying on a manually configured token budget
+          (<span class="doc-ref">Anthropic, 2026</span>). In adaptive mode, the
+          model internally evaluates the incoming request and decides whether to
+          produce a reasoning trace at all, with an external effort parameter
+          providing soft guidance on the aggressiveness of this allocation.
+        </p>
+
+        <p>
+          This approach shares the same motivating observation as the present
+          research, namely that not every task benefits equally from extended
+          reasoning, and that allocating reasoning resources uniformly across
+          queries is inefficient. However, the complexity assessment
+          underpinning adaptive thinking is entirely internal to the model: the
+          criteria by which the model judges whether to reason are not formally
+          specified, externally auditable, or independent of the generating
+          model itself. Furthermore, adaptive thinking does not address the
+          selection between categorically different model types, and it does not
+          characterise the systematic biases that each reasoning configuration
+          introduces at the generation level.
+        </p>
+
+        <h4>2.2.3 Summary and Findings</h4>
+
+        <p>
+          Taken together, both bodies of work share the same core observation:
+          different model configurations produce different outputs, and the
+          right choice depends on the nature of the task. Academic research
+          confirms this empirically but stops short of providing a way to make
+          that choice before generation begins. Industry practice has taken a
+          step in that direction, but adaptive thinking works implicitly within
+          a single model, with no formal measure of query complexity, no
+          cross-model scope, and no account of the biases each configuration
+          introduces.
+        </p>
+
+        <div class="highlight-box">
+          This research fills that gap by combining a structured bias analysis,
+          a query-level complexity measure, and an agentic routing mechanism —
+          providing what neither strand of prior work currently offers:
+          <strong
+            >a transparent, bias-aware framework for selecting the right model
+            before generation begins.</strong
+          >
+        </div>
+
+        <!-- 2.3 -->
+        <h3>2.3 Proposed Research Plan — Toward Bias-Aware Model Selection</h3>
+
+        <p>
+          My research addresses the question of
+          <em>"Which model should generate this?"</em>, a problem that sits
+          upstream of both verification and evaluation. The goal is to
+          understand the behavioral differences between reasoning and
+          non-reasoning models well enough to inform an automated, bias-aware
+          model selection process. To achieve this, my research plan will
+          proceed in three stages:
+        </p>
+
+        <div class="stage-block">
+          <div class="stage-block-label">Stage 1</div>
+          <div class="stage-block-title">Behavioral and Bias Analysis</div>
+          <p>
+            The first stage systematically compares the output behaviour of
+            reasoning and non-reasoning models across a structured range of
+            tasks, encompassing factors such as semantic complexity, prompt
+            length, task structure, and domain, in order to identify which model
+            selection is better suited to which type of request. Alongside this,
+            the stage conducts bias characterization at the generation level,
+            identifying what types of bias each configuration introduces, such
+            as over-elaboration bias in reasoning models, where extended
+            chain-of-thought produces unnecessary complexity on simple tasks,
+            and positional bias and self-reinforcement bias that emerge from how
+            each model type processes and weights its own prior context.
+            Understanding the nature and conditions of these biases is a
+            necessary precondition for building a reliable selection mechanism.
+          </p>
+        </div>
+
+        <div class="stage-block">
+          <div class="stage-block-label">Stage 2</div>
+          <div class="stage-block-title">Query Complexity Estimation</div>
+          <p>
+            The second stage examines the incoming query itself. Rather than
+            selecting a model based on user preference or task label, this stage
+            investigates whether it is possible to estimate the reasoning
+            complexity of a query from its own properties, such as semantic
+            complexity, syntactic structure, domain specificity, and the number
+            and nature of sub-questions the query naturally decomposes into.
+            This stage develops a query-level complexity signal that can
+            distinguish between requests that benefit from extended reasoning
+            and those that are better served by direct, non-reasoning
+            generation.
+          </p>
+        </div>
+
+        <div class="stage-block">
+          <div class="stage-block-label">Stage 3</div>
+          <div class="stage-block-title">Agentic Model Routing</div>
+          <p>
+            The third stage builds on the behavioural profiles established in
+            Stage 1 and the complexity estimation framework developed in Stage
+            2, exploring the design of an LLM-based routing agent that
+            automatically analyses a given query and directs it to the most
+            appropriate model configuration between a reasoning and
+            non-reasoning model. The routing agent integrates the findings of
+            the preceding stages into a practical decision mechanism, reducing
+            bias and improving output quality without requiring manual model
+            selection from the user.
+          </p>
+        </div>
+
+        <p>
+          Taken together, this three-stage approach moves the research from
+          descriptive analysis through diagnostic measurement toward a
+          practical, deployable framework for adaptive model routing.
+        </p>
+
+        <!-- 2.4 -->
+        <h3>2.4 Expected Contributions and Benefits</h3>
+
+        <p>
+          This research is expected to yield contributions at both the
+          scientific and practical levels.
+        </p>
+
+        <p>
+          Scientifically, the behavioral and bias analysis in Stage 1 will
+          produce the first systematic characterization of generation-level
+          biases specific to the reasoning and non-reasoning models across a
+          structured range of task types. This fills a documented gap in the
+          literature, as prior work has addressed output evaluation and
+          factuality verification but has not characterised how model
+          configuration itself introduces systematic bias prior to generation.
+        </p>
+
+        <p>
+          The query complexity estimation framework developed in Stage 2
+          provides a clear, measurable way to determine how much reasoning a
+          given query requires. Unlike existing approaches, where the model
+          judges its own complexity in a way that cannot be easily inspected or
+          verified, this framework estimates complexity from the query itself,
+          making the process transparent, consistent, and applicable across
+          different models and systems.
+        </p>
+
+        <p>
+          At the practical level, the agentic routing mechanism developed in
+          Stage 3 offers a deployable solution for reducing unnecessary
+          reasoning overhead on simple tasks and preventing reasoning-mode
+          underperformance on tasks that genuinely require inference.
+        </p>
+
+        <p>
+          This has direct implications for inference cost efficiency, as routing
+          queries away from reasoning models when they are not needed reduces
+          the token expenditure associated with extended chain-of-thought
+          generation. It also improves output quality by reducing the
+          hallucination and over-elaboration risks that arise when reasoning
+          models are applied to tasks outside their optimal operating range.
+        </p>
+
+        <p>
+          Finally, by making the selection decision transparent and bias-aware,
+          the framework supports a more principled approach to LLM deployment in
+          both research and production settings, where model configuration
+          choices are currently made largely on the basis of user intuition or
+          task label rather than systematic analysis.
+        </p>
+      </div>
+      <!-- /article-body -->
+    </div>
+    <!-- /article-wrap -->
+
+    <!-- FOOTER -->
+    <footer class="article-footer">
+      <div class="article-footer-inner">
+        <span class="footer-copy"
+          >© 2026 Phuriphan Prathipasen. All rights reserved.</span
+        >
+        <a href="index.html" class="footer-back">← Back to Portfolio</a>
+      </div>
+    </footer>
+
+    <script>
+      var navLinks = document.getElementById("navLinks");
+      var hamburger = document.getElementById("hamburger");
+
+      function toggleMenu() {
+        navLinks.classList.toggle("open");
+      }
+
+      document.addEventListener("click", function (e) {
+        if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
+          navLinks.classList.remove("open");
+        }
+      });
+    </script>
+  </body>
+</html>

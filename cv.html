@@ -1,0 +1,965 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CV — Phuriphan Prathipasen</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      :root {
+        --near-black: #111111;
+        --mid: #3a3a3c;
+        --muted: #6e6e73;
+        --light-border: #d2d2d7;
+        --bg: #f5f5f7;
+        --white: #ffffff;
+        --accent-blue: #0071e3;
+        --accent-blue-hover: #0077ed;
+        --tag-bg: #f0f0f5;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Outfit", sans-serif;
+        background: var(--white);
+        color: var(--near-black);
+        font-size: 17px;
+        line-height: 1.65;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      /* ─── NAV ─────────────────────────────────── */
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        background: rgba(255, 255, 255, 0.82);
+        backdrop-filter: saturate(180%) blur(20px);
+        -webkit-backdrop-filter: saturate(180%) blur(20px);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        overflow: visible;
+      }
+      .nav-inner {
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 0 24px;
+        height: 52px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .nav-logo {
+        font-family: "Instrument Serif", serif;
+        font-size: 18px;
+        color: var(--near-black);
+        text-decoration: none;
+        letter-spacing: -0.01em;
+      }
+      .nav-links {
+        display: flex;
+        gap: 28px;
+        list-style: none;
+      }
+      .nav-links a {
+        font-size: 13px;
+        font-weight: 400;
+        color: var(--mid);
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+      .nav-links a:hover {
+        color: var(--near-black);
+      }
+      .nav-active {
+        color: var(--near-black) !important;
+        font-weight: 500 !important;
+      }
+      .nav-cta {
+        font-size: 13px;
+        font-weight: 500;
+        color: var(--accent-blue) !important;
+      }
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        padding: 4px;
+      }
+      .hamburger span {
+        display: block;
+        width: 22px;
+        height: 1.5px;
+        background: var(--near-black);
+      }
+
+      /* ─── ARTICLE LAYOUT ─────────────────────── */
+      .article-wrap {
+        max-width: 700px;
+        margin: 0 auto;
+        padding: 120px 24px 100px;
+      }
+
+      .article-label {
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 16px;
+      }
+      .article-title {
+        font-family: "Instrument Serif", serif;
+        font-size: clamp(32px, 6vw, 52px);
+        font-weight: 400;
+        line-height: 1.12;
+        letter-spacing: -0.025em;
+        color: var(--near-black);
+        margin-bottom: 20px;
+      }
+      .article-meta {
+        font-size: 14px;
+        color: var(--muted);
+        margin-bottom: 32px;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+      .article-meta span {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .btn-pdf {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: var(--tag-bg);
+        color: var(--near-black);
+        font-family: "Outfit", sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        padding: 10px 20px;
+        border-radius: 100px;
+        text-decoration: none;
+        border: 1px solid var(--light-border);
+        transition:
+          background 0.2s,
+          transform 0.15s;
+        margin-bottom: 48px;
+      }
+      .btn-pdf:hover {
+        background: #e5e5ea;
+        transform: translateY(-1px);
+      }
+
+      .article-divider {
+        border: none;
+        border-top: 1px solid var(--light-border);
+        margin: 48px 0;
+      }
+
+      /* ─── BODY TYPOGRAPHY ────────────────────── */
+      .article-body p {
+        font-size: 17px;
+        color: var(--mid);
+        line-height: 1.8;
+        margin-bottom: 16px;
+      }
+      .article-body p:last-child {
+        margin-bottom: 0;
+      }
+
+      .article-body h2 {
+        font-family: "Instrument Serif", serif;
+        font-size: clamp(22px, 4vw, 30px);
+        font-weight: 400;
+        color: var(--near-black);
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+        margin-top: 56px;
+        margin-bottom: 20px;
+      }
+
+      .article-body ul,
+      .article-body ol {
+        padding-left: 20px;
+        margin-bottom: 16px;
+      }
+      .article-body li {
+        font-size: 16px;
+        color: var(--mid);
+        line-height: 1.75;
+        margin-bottom: 6px;
+      }
+
+      /* ─── CV ENTRY ───────────────────────────── */
+      .cv-entry {
+        margin-bottom: 32px;
+        padding-bottom: 32px;
+        border-bottom: 1px solid var(--light-border);
+      }
+      .cv-entry:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+      .cv-entry-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 16px;
+        margin-bottom: 4px;
+        flex-wrap: wrap;
+      }
+      .cv-org {
+        font-size: 16px;
+        font-weight: 600;
+        color: var(--near-black);
+      }
+      .cv-date {
+        font-size: 13px;
+        color: var(--muted);
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+      .cv-role {
+        font-size: 14px;
+        color: var(--accent-blue);
+        font-weight: 500;
+        margin-bottom: 10px;
+      }
+      .cv-entry ul {
+        padding-left: 18px;
+        margin-bottom: 0;
+      }
+      .cv-entry li {
+        font-size: 15px;
+        color: var(--mid);
+        line-height: 1.7;
+        margin-bottom: 5px;
+      }
+      .cv-entry li:last-child {
+        margin-bottom: 0;
+      }
+
+      /* ─── PUBLICATIONS ───────────────────────── */
+      .pub-item {
+        font-size: 15px;
+        color: var(--mid);
+        line-height: 1.75;
+        margin-bottom: 14px;
+        padding-left: 16px;
+        border-left: 2px solid var(--light-border);
+      }
+      .pub-item:last-child {
+        margin-bottom: 0;
+      }
+      .pub-item a {
+        color: var(--accent-blue);
+        text-decoration: none;
+        font-size: 13px;
+      }
+      .pub-item a:hover {
+        text-decoration: underline;
+      }
+
+      /* ─── SKILLS GRID ────────────────────────── */
+      .skills-grid {
+        display: grid;
+        grid-template-columns: 160px 1fr;
+        gap: 10px 16px;
+        font-size: 15px;
+      }
+      .skills-label {
+        color: var(--muted);
+        font-weight: 500;
+      }
+      .skills-val {
+        color: var(--mid);
+      }
+
+      /* ─── AWARDS LIST ────────────────────────── */
+      .award-item {
+        display: flex;
+        gap: 12px;
+        align-items: flex-start;
+        margin-bottom: 10px;
+        font-size: 15px;
+        color: var(--mid);
+        line-height: 1.6;
+      }
+      .award-item:last-child {
+        margin-bottom: 0;
+      }
+      .award-badge {
+        flex-shrink: 0;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--accent-blue);
+        background: #e8f0fd;
+        border-radius: 6px;
+        padding: 3px 8px;
+        margin-top: 2px;
+      }
+
+      /* ─── SECTION NUMBER BADGE ───────────────── */
+      .section-num {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--accent-blue);
+        margin-bottom: 4px;
+        display: block;
+      }
+
+      /* ─── FOOTER ─────────────────────────────── */
+      .article-footer {
+        border-top: 1px solid var(--light-border);
+        padding: 28px 24px;
+        margin-top: 80px;
+      }
+      .article-footer-inner {
+        max-width: 700px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+      .footer-copy {
+        font-size: 12px;
+        color: var(--muted);
+      }
+      .footer-back {
+        font-size: 13px;
+        font-weight: 500;
+        color: var(--accent-blue);
+        text-decoration: none;
+      }
+      .footer-back:hover {
+        opacity: 0.7;
+      }
+
+      /* ─── RESPONSIVE ─────────────────────────── */
+      @media (max-width: 768px) {
+        .nav-links {
+          display: none;
+        }
+        .hamburger {
+          display: flex;
+        }
+        .nav-links.open {
+          display: flex;
+          flex-direction: column;
+          position: fixed;
+          top: 52px;
+          left: 0;
+          right: 0;
+          z-index: 99;
+          background: rgba(255, 255, 255, 0.98);
+          backdrop-filter: blur(20px);
+          -webkit-backdrop-filter: blur(20px);
+          padding: 20px 24px 28px;
+          gap: 18px;
+          border-bottom: 1px solid var(--light-border);
+          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+        }
+        .nav-links.open a {
+          font-size: 16px;
+        }
+        .article-wrap {
+          padding: 100px 20px 72px;
+        }
+        .cv-entry-header {
+          flex-direction: column;
+          gap: 4px;
+        }
+        .cv-date {
+          white-space: normal;
+        }
+        .skills-grid {
+          grid-template-columns: 1fr;
+          gap: 4px;
+        }
+        .skills-label {
+          color: var(--near-black);
+          margin-top: 10px;
+        }
+        .skills-label:first-child {
+          margin-top: 0;
+        }
+        .article-footer-inner {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- NAV -->
+    <nav>
+      <div class="nav-inner">
+        <a href="index.html" class="nav-logo">You can call me "Palm" 🌴</a>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#research">Research</a></li>
+          <li><a href="research-proposal.html">Research Proposal</a></li>
+          <li><a href="index.html#publications">Publications</a></li>
+          <li><a href="index.html#experience">Experience</a></li>
+          <li><a href="cv.html" class="nav-active">CV</a></li>
+          <li><a href="index.html#writing">Writing / Blog</a></li>
+          <li><a href="index.html#contact" class="nav-cta">Get in Touch</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ARTICLE -->
+    <div class="article-wrap">
+      <p class="article-label">Curriculum Vitae · Master's Applicant 2027</p>
+      <h1 class="article-title">Phuriphan Prathipasen</h1>
+      <div class="article-meta">
+        <span>📍 Bangkok, Thailand</span>
+        <span>✉️ pp.phuriphan@gmail.com</span>
+        <span
+          >🔗
+          <a
+            href="https://www.linkedin.com/in/phuriphan-prathipasen/"
+            target="_blank"
+            style="color: var(--accent-blue); text-decoration: none"
+            >LinkedIn</a
+          ></span
+        >
+      </div>
+
+      <a
+        href="https://drive.google.com/file/d/1NvSmlHm03Bvqo7DWovVYbzEae70u_LTc/view?usp=drive_link"
+        target="_blank"
+        class="btn-pdf"
+      >
+        📄 View PDF Version ↗
+      </a>
+
+      <hr class="article-divider" />
+
+      <div class="article-body">
+        <!-- EDUCATION -->
+        <span class="section-num">Education</span>
+        <h2>Academic Background</h2>
+
+        <div class="cv-entry">
+          <div class="cv-entry-header">
+            <span class="cv-org">Tokyo Institute of Technology, Japan</span>
+            <span class="cv-date">April 2023 – August 2023</span>
+          </div>
+          <div class="cv-role">
+            Exchange Student — Young Science and Engineering Researchers Program
+            (YSEP)
+          </div>
+          <ul>
+            <li>
+              Conducted NLP research under Tokunaga Laboratory, supervised by
+              Professor Tokunaga Takenobu.
+            </li>
+            <li>
+              Served as Committee Member at the Thai Students' Association at
+              Tokyo Institute of Technology.
+            </li>
+          </ul>
+        </div>
+
+        <div class="cv-entry">
+          <div class="cv-entry-header">
+            <span class="cv-org"
+              >Sirindhorn International Institute of Technology (SIIT),
+              Thammasat University, Thailand</span
+            >
+            <span class="cv-date">August 2019 – August 2023</span>
+          </div>
+          <div class="cv-role">
+            Bachelor of Engineering (International Program) — Computer
+            Engineering, Artificial Intelligence Program
+          </div>
+          <ul>
+            <li>
+              GPA: 3.32/4.00 — received Good Academic Performance and Good
+              Conduct Scholarship.
+            </li>
+            <li>
+              Received the SIIT Reputation Award 2021: Outstanding Performance
+              Award.
+            </li>
+          </ul>
+        </div>
+
+        <hr class="article-divider" />
+
+        <!-- PROFESSIONAL EXPERIENCE -->
+        <span class="section-num">Professional Work Experience</span>
+        <h2>Industry Roles</h2>
+
+        <div class="cv-entry">
+          <div class="cv-entry-header">
+            <span class="cv-org">Athentic Consulting Co., Ltd., Thailand</span>
+            <span class="cv-date">October 2024 – Present</span>
+          </div>
+          <div class="cv-role">
+            Data and AI Transformation Consultant — Data Strategy Team Lead
+          </div>
+          <ul>
+            <li>
+              Serve as the Data Strategy Team Lead, guiding the team across all
+              project phases from contextualization to implementation, including
+              stakeholder interviews, data strategy frameworks, use case
+              planning, and ideation workshops.
+            </li>
+            <li>
+              Develop and implement data and AI strategy frameworks to drive
+              transformation; analyze business processes for data-driven
+              opportunities and provide client consultation throughout pre-sale
+              and post-sale phases.
+            </li>
+            <li>
+              Supervise and mentor analysts on data strategy frameworks, use
+              case generation, and project execution.
+            </li>
+            <li>
+              Review and adapt data governance standards such as DAMA and Thai
+              government guidelines to support data strategy use cases.
+            </li>
+            <li>
+              Support implementation of projects in Data Strategy, Data
+              Governance, Data Transformation, AI Transformation, and Digital
+              Transformation.
+            </li>
+          </ul>
+        </div>
+
+        <div class="cv-entry">
+          <div class="cv-entry-header">
+            <span class="cv-org">Data Wow Co., Ltd., Thailand</span>
+            <span class="cv-date">September 2023 – September 2024</span>
+          </div>
+          <div class="cv-role">Data Consultant</div>
+          <ul>
+            <li>
+              Led client meetings with the business development team to assess
+              data science and engineering challenges.
+            </li>
+            <li>
+              Formulated solutions, designed solution architectures, and crafted
+              technical proposals for data and AI solutions including digital
+              transformations.
+            </li>
+            <li>
+              Collaborated with data science, data engineering, and development
+              teams to develop the most suitable solutions.
+            </li>
+            <li>
+              Managed custom AI development projects, ensuring seamless
+              processes and driving product improvements with C-level
+              executives.
+            </li>
+            <li>
+              Led the product development team using Lean Startup methodology
+              for concept development, MVP building, and scalable
+              commercialization strategies.
+            </li>
+            <li>
+              Ensured seamless collaboration among all stakeholders across
+              business development, product development, marketing, and
+              technical teams.
+            </li>
+          </ul>
+        </div>
+
+        <hr class="article-divider" />
+
+        <!-- EARLY CAREER -->
+        <span class="section-num">Early Career Experience</span>
+        <h2>Research &amp; Startup</h2>
+
+        <div class="cv-entry">
+          <div class="cv-entry-header">
+            <span class="cv-org"
+              >Sirindhorn International Institute of Technology (SIIT),
+              Thammasat University, Thailand</span
+            >
+            <span class="cv-date">August 2021 – September 2023</span>
+          </div>
+          <div class="cv-role">Research Assistant (Part-time)</div>
+          <ul>
+            <li>
+              Contributed to research in machine learning, NLP, and deep
+              learning as part of the Musical AI and Smart Campus Creation
+              project — resulting in an IEEE conference paper and a Scientific
+              Reports journal article.
+            </li>
+            <li>
+              Conducted deep learning research for WD, Thailand, resulting in an
+              IEEE Access journal article.
+            </li>
+          </ul>
+        </div>
+
+        <div class="cv-entry">
+          <div class="cv-entry-header">
+            <span class="cv-org">Checkpoint (Startup), Thailand</span>
+            <span class="cv-date">January 2021 – March 2023</span>
+          </div>
+          <div class="cv-role">Co-Founder, CEO, and CTO</div>
+          <ul>
+            <li>
+              Launched an ambient music startup for productivity and relaxation,
+              gaining 5,000+ users within 6 months.
+            </li>
+            <li>
+              Developed data analysis strategies leading to a 25% increase in
+              customer retention.
+            </li>
+            <li>
+              Secured USD 10,000 in funding with 11 successful competitions and
+              established partnerships with 14 companies, 6 artists, and a
+              research network.
+            </li>
+            <li>
+              Competed in and won awards across 11+ startup competitions
+              including AWS Entrepreneurship Program, Startup Thailand League,
+              88 Sandbox, and TED Youth Startup Fund.
+            </li>
+          </ul>
+        </div>
+
+        <div class="cv-entry">
+          <div class="cv-entry-header">
+            <span class="cv-org">AI and Robotics Ventures (ARV), Thailand</span>
+            <span class="cv-date">June – August 2022</span>
+          </div>
+          <div class="cv-role">Machine Learning Engineer (Intern)</div>
+          <ul>
+            <li>
+              Developed and deployed data and ML pipelines on Google Cloud
+              Platform (Cloud Storage, Cloud Functions, Cloud Run, BigQuery,
+              Looker Studio) under Agile framework.
+            </li>
+          </ul>
+        </div>
+
+        <div class="cv-entry">
+          <div class="cv-entry-header">
+            <span class="cv-org"
+              >Thailand's National Electronics and Computer Technology Center
+              (NECTEC, NSTDA)</span
+            >
+            <span class="cv-date">April 2021 – August 2022</span>
+          </div>
+          <div class="cv-role">Research Assistant (Intern)</div>
+          <ul>
+            <li>
+              Worked in data science research including machine learning and
+              data analysis under the digital agriculture technology team,
+              resulting in 2 IEEE international conference publications.
+            </li>
+          </ul>
+        </div>
+
+        <hr class="article-divider" />
+
+        <!-- PUBLICATIONS -->
+        <span class="section-num">Research Publications</span>
+        <h2>Publications</h2>
+        <p>
+          Published 2 journal articles and 3 international conference papers in
+          natural language processing, machine learning, and deep learning.
+        </p>
+
+        <br />
+
+        <div class="pub-item">
+          Gulyanon, S., Deepaisarn, S., Chokphantavee, S., Chokphantavee, S.,
+          Prathipasen, P., et al. (2024). Denoising Raman spectra using
+          autoencoder for improved analysis of contamination in HDD.
+          <em>IEEE Access.</em>
+          <a href="https://doi.org/10.1109/ACCESS.2024.3441824" target="_blank"
+            >doi:10.1109/ACCESS.2024.3441824 ↗</a
+          >
+        </div>
+
+        <div class="pub-item">
+          Deepaisarn, S., Chokphantavee, S., Chokphantavee, S., Prathipasen, P.,
+          Buaruk, S., &amp; Sornlertlamvanich, V. (2023). NLP-based music
+          processing for composer classification.
+          <em>Scientific Reports, 13.</em>
+          <a href="https://doi.org/10.1038/s41598-023-40332-0" target="_blank"
+            >doi:10.1038/s41598-023-40332-0 ↗</a
+          >
+        </div>
+
+        <div class="pub-item">
+          Deepaisarn, S., Buaruk, S., Chokphantavee, S., Chokphantavee, S.,
+          Prathipasen, P., &amp; Sornlertlamvanich, V. (2022). Visual-based
+          musical data representation for composer classification.
+          <em>iSAI-NLP 2022.</em>
+          <a
+            href="https://doi.org/10.1109/iSAI-NLP56921.2022.9960254"
+            target="_blank"
+            >doi:10.1109/iSAI-NLP56921.2022.9960254 ↗</a
+          >
+        </div>
+
+        <div class="pub-item">
+          Prathipasen, P., Dillon, P., Aimmanee, P., et al. (2021). Clutter
+          removal algorithm based on grid density with a recursive approach for
+          rockfall detection in 3D point clouds from a terrestrial LiDAR
+          scanner. <em>iSAI-NLP 2021.</em>
+          <a
+            href="https://doi.org/10.1109/iSAI-NLP54397.2021.9678185"
+            target="_blank"
+            >doi:10.1109/iSAI-NLP54397.2021.9678185 ↗</a
+          >
+        </div>
+
+        <div class="pub-item">
+          Songsriboonsit, N., Tantawanich, P., Prathipasen, P., et al. (2022).
+          Forecasting water stress in durian trees using an ARIMA model with a
+          relation between temperature differential and VPD. <em>SICE 2022.</em>
+          <a
+            href="https://doi.org/10.23919/SICE56594.2022.9905764"
+            target="_blank"
+            >doi:10.23919/SICE56594.2022.9905764 ↗</a
+          >
+        </div>
+
+        <hr class="article-divider" />
+
+        <!-- AWARDS -->
+        <span class="section-num">Awards</span>
+        <h2>Awards &amp; Recognition</h2>
+
+        <div class="award-item">
+          <span class="award-badge">Award</span>SIIT Reputation Award 2021:
+          Outstanding Performance Award, Sirindhorn International Institute of
+          Technology (SIIT) (2021)
+        </div>
+        <div class="award-item">
+          <span class="award-badge">Scholarship</span>Good Academic Performance
+          and Good Conduct Scholarship, SIIT, Thammasat University (2021)
+        </div>
+        <div class="award-item">
+          <span class="award-badge">1st Place</span>AWS Entrepreneurship
+          Program, Team Checkpoint, Thailand (2021)
+        </div>
+        <div class="award-item">
+          <span class="award-badge">1st Place</span>CU Startup Thailand League
+          2022, Team Checkpoint, Chulalongkorn University (2022)
+        </div>
+        <div class="award-item">
+          <span class="award-badge">Grant</span>Selected Recipient of 100,000
+          THB Grant, TED Fellow Youth Startup Fund 2021, Team Checkpoint,
+          Thammasat University (2022)
+        </div>
+        <div class="award-item">
+          <span class="award-badge">Top 8</span>88 Sandbox Program (Smart
+          People, Smart Society), Top 8 out of 270 Teams in Thailand, Team
+          Checkpoint (2022)
+        </div>
+        <div class="award-item">
+          <span class="award-badge">3rd Runner-Up</span>Startup Demo Pitch,
+          Thailand HR Tech 2022 (2022)
+        </div>
+        <div class="award-item">
+          <span class="award-badge">Top 12</span>SCB 10X Metathon 2022,
+          Metaverse Infrastructure Track, Top 12 out of 300 Teams Worldwide,
+          Team Checkpoint (2022)
+        </div>
+        <div class="award-item">
+          <span class="award-badge">Top 13</span>Chula Engineering Innofunding
+          &amp; Innocrowding, Team Checkpoint, Chulalongkorn University (2022)
+        </div>
+        <div class="award-item">
+          <span class="award-badge">Finalist</span>Regional Finalist &amp;
+          Prototype Development Grant, National Innovation Agency (NIA), Startup
+          Thailand League 2021, Team Quasi-Athena (2021)
+        </div>
+        <div class="award-item">
+          <span class="award-badge">1st Place</span>CU Startup Thailand League
+          2021, Team Quasi-Athena, Chulalongkorn University (2021)
+        </div>
+        <div class="award-item">
+          <span class="award-badge">Selected</span>KATALYST / KBANK &amp;
+          Stanford Entrepreneurship &amp; Innovation Training 2021 (2021)
+        </div>
+        <div class="award-item">
+          <span class="award-badge">2nd Runner-Up</span>Computer Vision and
+          Robotics Competition, International Project-Based Learning Program
+          2021, SIIT &amp; Osaka Institute of Technology (2021)
+        </div>
+        <div class="award-item">
+          <span class="award-badge">Scholarship</span>AWS Machine Learning
+          Scholarship Program, Thailand (2021)
+        </div>
+
+        <hr class="article-divider" />
+
+        <!-- EXTRA ACTIVITIES -->
+        <span class="section-num">Extra Activities</span>
+        <h2>Leadership &amp; Community</h2>
+
+        <ul>
+          <li>
+            Committee Member, Thai Students' Association at Tokyo Institute of
+            Technology — organized welcoming events for Thai students (2023)
+          </li>
+          <li>
+            President, SIIT BizHub — startup community providing consultation
+            and networking for SIIT students (2023)
+          </li>
+          <li>Guest Speaker, SIIT Talk 2022: SIIT 30th Anniversary (2022)</li>
+          <li>
+            Teaching Assistant, SIIT Workshop 2022: Get to Know Data Science
+            Coding &amp; Study at SIIT (2022)
+          </li>
+          <li>
+            Teaching Assistant, SIIT Workshop 2021: Python and Artificial
+            Intelligence (2022)
+          </li>
+          <li>
+            Guest Speaker and Event Organizer, SIIT: ITS100 for Freshmen (2022)
+          </li>
+          <li>
+            Main Speaker and Event Organizer, SIIT Talk: Intern Research &amp;
+            Startup (2021)
+          </li>
+        </ul>
+
+        <hr class="article-divider" />
+
+        <!-- SKILLS -->
+        <span class="section-num">Skills</span>
+        <h2>Technical Skills</h2>
+
+        <div class="skills-grid">
+          <span class="skills-label">Languages</span>
+          <span class="skills-val"
+            >Thai (Native), English (TOEIC L&amp;R — 835/990)</span
+          >
+          <span class="skills-label">Programming</span>
+          <span class="skills-val"
+            >Python, SQL, HTML, CSS, JavaScript, C, Java, Go</span
+          >
+          <span class="skills-label">Frameworks</span>
+          <span class="skills-val"
+            >PyTorch, TensorFlow, Data Build Tool (DBT), Pinecone</span
+          >
+          <span class="skills-label">Cloud</span>
+          <span class="skills-val"
+            >Amazon Web Services (AWS), Google Cloud Platform (GCP)</span
+          >
+          <span class="skills-label">Domains</span>
+          <span class="skills-val"
+            >Data Strategy, AI Strategy, Data Governance, AI Governance, Data
+            Management (DAMA), Digital Transformation, AI Product
+            Management</span
+          >
+        </div>
+
+        <hr class="article-divider" />
+
+        <!-- REFEREES -->
+        <span class="section-num">Referees</span>
+        <h2>Referees</h2>
+
+        <div class="cv-entry">
+          <div class="cv-org" style="margin-bottom: 4px">
+            Professor Virach Sornlertlamvanich
+          </div>
+          <div class="cv-role" style="margin-bottom: 0">
+            Musashino University, Japan
+          </div>
+          <p style="font-size: 14px; margin-top: 4px">
+            <a
+              href="mailto:virach@musashino-u.ac.jp"
+              style="color: var(--accent-blue); text-decoration: none"
+              >virach@musashino-u.ac.jp</a
+            >
+          </p>
+        </div>
+
+        <div class="cv-entry">
+          <div class="cv-org" style="margin-bottom: 4px">
+            Assoc. Prof. Waree Kongprawechnon
+          </div>
+          <div class="cv-role" style="margin-bottom: 0">
+            Sirindhorn International Institute of Technology (SIIT), Thammasat
+            University
+          </div>
+          <p style="font-size: 14px; margin-top: 4px">
+            <a
+              href="mailto:waree@siit.tu.ac.th"
+              style="color: var(--accent-blue); text-decoration: none"
+              >waree@siit.tu.ac.th</a
+            >
+          </p>
+        </div>
+
+        <div class="cv-entry">
+          <div class="cv-org" style="margin-bottom: 4px">
+            Asst. Prof. Somrudee Deepaisarn
+          </div>
+          <div class="cv-role" style="margin-bottom: 0">
+            Sirindhorn International Institute of Technology (SIIT), Thammasat
+            University
+          </div>
+          <p style="font-size: 14px; margin-top: 4px">
+            <a
+              href="mailto:somrudee@siit.tu.ac.th"
+              style="color: var(--accent-blue); text-decoration: none"
+              >somrudee@siit.tu.ac.th</a
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="article-footer">
+      <div class="article-footer-inner">
+        <span class="footer-copy">© 2026 Phuriphan Prathipasen</span>
+        <a href="index.html" class="footer-back">← Back to Portfolio</a>
+      </div>
+    </footer>
+
+    <script>
+      function toggleMenu() {
+        document.getElementById("navLinks").classList.toggle("open");
+      }
+    </script>
+  </body>
+</html>
